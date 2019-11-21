@@ -1,0 +1,1096 @@
+error: 2019/11/10 11:41:27 Handle error: 403 Forbidden with status code: %!s(int=403) 
+error: 2019/11/10 11:41:51 Handle error: 403 Forbidden with status code: 403 
+error: 2019/11/10 11:43:53 Error status code: 403, error message: 403 Forbidden 
+error: 2019/11/10 11:46:57 Error status code: 404, error message: page not found 
+error: 2019/11/10 11:47:04 Error status code: 404, error message: page not found 
+error: 2019/11/10 11:47:06 Error status code: 404, error message: page not found 
+error: 2019/11/10 11:48:32 Error status code: 404, error message: page not found 
+error: 2019/11/10 11:58:41 Error status code: 404, error message: page not found 
+error: 2019/11/10 15:12:51 Error status code: 404, error message: page not found 
+error: 2019/11/10 20:52:46 Error status code: 404, error message: page not found 
+error: 2019/11/10 21:48:36 Error status code: 404, error message: page not found 
+error: 2019/11/11 21:03:56 Error status code: 404, error message: page not found 
+error: 2019/11/11 22:10:05 [<nil>] Request ID: PeDen/UgQwT3nWgP-000001
+error: 2019/11/11 22:14:03 [<nil>] Request ID: PeDen/M5XRaKlwnH-000001
+error: 2019/11/11 22:15:07 [<nil>] Request ID: PeDen/ftGUtjmocH-000001
+error: 2019/11/11 22:15:13 [open resources/views/frontend/email/email.html: The system cannot find the file specified.] Request ID: PeDen/ftGUtjmocH-000003
+error: 2019/11/11 22:15:13 Can not register user, email: vdsgnhanvienkl03612@gmail.com. Error: open resources/views/frontend/email/email.html: The system cannot find the file specified. Request ID: PeDen/ftGUtjmocH-000003
+error: 2019/11/11 22:15:13 Handler for POST /register returned error: open resources/views/frontend/email/email.html: The system cannot find the file specified. Request ID: PeDen/ftGUtjmocH-000003
+error: 2019/11/11 22:15:13 Error status code: 500, error message: open resources/views/frontend/email/email.html: The system cannot find the file specified. 
+error: 2019/11/11 22:15:34 [<nil>] Request ID: PeDen/mseKXu0TNJ-000001
+error: 2019/11/12 20:29:50 Error status code: 404, error message: page not found 
+error: 2019/11/12 22:04:01 [<nil>] Request ID: PeDen/ZQLbIgw8LY-000002
+error: 2019/11/12 22:06:42 [<nil>] Request ID: PeDen/Gqu1MmjGSL-000001
+error: 2019/11/12 22:08:23 [<nil>] Request ID: PeDen/BQGM1eHGIj-000001
+error: 2019/11/12 22:09:39 [<nil>] Request ID: PeDen/ZM41CYfugx-000001
+error: 2019/11/12 22:16:15 [<nil>] Request ID: PeDen/Ju1L28EcvL-000001
+error: 2019/11/12 22:16:19 Can not decode message was publish from register. Error: invalid character 'M' looking for beginning of value Request ID: PeDen/Ju1L28EcvL-000003
+error: 2019/11/12 22:19:50 Can not decode message was publish from register. Error: invalid character 'M' looking for beginning of value [Request ID: PeDen/sMDC82sfns-000001] goroutine 23 [running]:
+runtime/debug.Stack(0xbf6924, 0x10, 0xc000349ed0)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc000236660, 0xc0e6f9, 0x3b, 0xc000349f88, 0x1, 0x1)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:63 +0xe3
+github.com/vuongabc92/octocv/http/mail.(*worker).registerConfirmationMail(0xc00025ee10)
+	D:/go/src/github.com/vuongabc92/octocv/http/mail/worker.go:46 +0x2dc
+created by github.com/vuongabc92/octocv/http/mail.(*worker).Waiting
+	D:/go/src/github.com/vuongabc92/octocv/http/mail/worker.go:27 +0x46
+
+error: 2019/11/12 22:24:02 [<nil>] [Request ID: PeDen/MSCxsFESzT-000001] 
+goroutine 9 [running]:
+runtime/debug.Stack(0x10, 0x10, 0xaf5000)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Error(0xc000240d20, 0xc000349890, 0x1, 0x1)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:56 +0x60
+github.com/vuongabc92/octocv/http/actions.Auth.Register(0xc0003241e0, 0xc0003580f0, 0xb, 0xc000336180, 0x18, 0xc00038c040, 0x6, 0xc0003384a8, 0x12e5938)
+	D:/go/src/github.com/vuongabc92/octocv/http/actions/auth.go:40 +0x230
+github.com/vuongabc92/octocv/http/router/auth.(*authRouter).register(0xc000260330, 0xc0003241e0, 0xc00032e150, 0xaeeee0, 0xc000348770)
+	D:/go/src/github.com/vuongabc92/octocv/http/router/auth/auth_routes.go:62 +0x22f
+github.com/vuongabc92/octocv/http/middleware.RequestID.WrapHandler.func1(0xc0003241e0, 0xc00032e150, 0x0, 0x0)
+	D:/go/src/github.com/vuongabc92/octocv/http/middleware/request_id.go:78 +0x3cb
+github.com/vuongabc92/octocv/http/middleware.Lang.WrapHandler.func1(0xc0003241e0, 0xc00032e150, 0xc00038c047, 0xb)
+	D:/go/src/github.com/vuongabc92/octocv/http/middleware/lang.go:28 +0x1f1
+github.com/vuongabc92/octocv/http.(*Server).makeHTTPHandler.func1(0xd839a0, 0xc00036a000, 0xc000352400)
+	D:/go/src/github.com/vuongabc92/octocv/http/server.go:205 +0x283
+net/http.HandlerFunc.ServeHTTP(0xc0002c62a0, 0xd839a0, 0xc00036a000, 0xc000352400)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/csrf.(*csrf).ServeHTTP(0xc00037c000, 0xd839a0, 0xc00036a000, 0xc000352300)
+	D:/go/src/github.com/gorilla/csrf/csrf.go:297 +0x6bd
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0002c8000, 0xd839a0, 0xc00036a000, 0xc00033c000)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc000266340, 0xd839a0, 0xc00036a000, 0xc00033c000)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc00032c000, 0xd84ae0, 0xc000026800)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/12 22:24:07 Can not decode message was publish from register. Error: invalid character 'M' looking for beginning of value [Request ID: PeDen/MSCxsFESzT-000003] 
+goroutine 26 [running]:
+runtime/debug.Stack(0x40bad3, 0xc000449320, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc000240d20, 0xc0e6fc, 0x3b, 0xc000493f88, 0x1, 0x1)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/mail.(*worker).registerConfirmationMail(0xc000264c10)
+	D:/go/src/github.com/vuongabc92/octocv/http/mail/worker.go:46 +0x2dc
+created by github.com/vuongabc92/octocv/http/mail.(*worker).Waiting
+	D:/go/src/github.com/vuongabc92/octocv/http/mail/worker.go:27 +0x46
+
+error: 2019/11/12 22:27:13 Can not decode message was publish from register. Error: invalid character 'M' looking for beginning of value [Request ID: PeDen/t4qJn1fBga-000003] 
+goroutine 23 [running]:
+runtime/debug.Stack(0x40bad3, 0xc0003b4190, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc000292300, 0xc0e6fe, 0x3b, 0xc00026ff88, 0x1, 0x1)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/mail.(*worker).registerConfirmationMail(0xc00020ec90)
+	D:/go/src/github.com/vuongabc92/octocv/http/mail/worker.go:46 +0x2dc
+created by github.com/vuongabc92/octocv/http/mail.(*worker).Waiting
+	D:/go/src/github.com/vuongabc92/octocv/http/mail/worker.go:27 +0x46
+
+error: 2019/11/13 20:33:43 Error status code: 404, error message: page not found  
+goroutine 22 [running]:
+runtime/debug.Stack(0x40bad3, 0xc00024c090, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc00023c420, 0xc06b69, 0x28, 0xc0003e1a28, 0x2, 0x2)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/httputils.MakeErrorHandler.func1(0xd83960, 0xc00044c000, 0xc0003e8200)
+	D:/go/src/github.com/vuongabc92/octocv/http/httputils/httputils.go:39 +0x233
+net/http.HandlerFunc.ServeHTTP(0xc000274720, 0xd83960, 0xc00044c000, 0xc0003e8200)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000284240, 0xd83960, 0xc00044c000, 0xc0003e8000)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc0002ec000, 0xd83960, 0xc00044c000, 0xc0003e8000)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc000374000, 0xd84ae0, 0xc000270c40)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/13 20:50:46 Error status code: 404, error message: page not found  
+goroutine 13 [running]:
+runtime/debug.Stack(0x40bad3, 0xc0004131d0, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc000362720, 0xc07bc2, 0x28, 0xc00007da28, 0x2, 0x2)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/httputils.MakeErrorHandler.func1(0xd84a20, 0xc000302380, 0xc0001ba500)
+	D:/go/src/github.com/vuongabc92/octocv/http/httputils/httputils.go:39 +0x233
+net/http.HandlerFunc.ServeHTTP(0xc0002984a0, 0xd84a20, 0xc000302380, 0xc0001ba500)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0002b8000, 0xd84a20, 0xc000302380, 0xc0001ba300)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc0002b6000, 0xd84a20, 0xc000302380, 0xc0001ba300)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc000193400, 0xd85ba0, 0xc000244cc0)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/17 10:18:21 Error status code: 404, error message: page not found  
+goroutine 21 [running]:
+runtime/debug.Stack(0x40bad3, 0xc00037f100, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc0004760c0, 0xc083a4, 0x28, 0xc000395a28, 0x2, 0x2)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/httputils.MakeErrorHandler.func1(0xd85520, 0xc0003de0e0, 0xc00027f100)
+	D:/go/src/github.com/vuongabc92/octocv/http/httputils/httputils.go:39 +0x233
+net/http.HandlerFunc.ServeHTTP(0xc0002f8480, 0xd85520, 0xc0003de0e0, 0xc00027f100)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000304000, 0xd85520, 0xc0003de0e0, 0xc00027ef00)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc000302000, 0xd85520, 0xc0003de0e0, 0xc00027ef00)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc0001d7180, 0xd86720, 0xc00026ecc0)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/17 21:22:37 Error status code: 404, error message: page not found  
+goroutine 14 [running]:
+runtime/debug.Stack(0x40bad3, 0xc000366120, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc000364330, 0xc09457, 0x28, 0xc000265a28, 0x2, 0x2)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/httputils.MakeErrorHandler.func1(0xd86820, 0xc0003680e0, 0xc000394800)
+	D:/go/src/github.com/vuongabc92/octocv/http/httputils/httputils.go:39 +0x233
+net/http.HandlerFunc.ServeHTTP(0xc000004800, 0xd86820, 0xc0003680e0, 0xc000394800)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000266180, 0xd86820, 0xc0003680e0, 0xc000394600)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc00025a340, 0xd86820, 0xc0003680e0, 0xc000394600)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc000282aa0, 0xd87a20, 0xc0002b51c0)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/17 21:25:52 Can not send forgot password mail. Error: open resources/views/frontend/email/forgot-password.html: The system cannot find the file specified. [Request ID: PeDen/YqqadIBQTZ-000002] 
+goroutine 27 [running]:
+runtime/debug.Stack(0x40bad3, 0xc0001c4e30, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc00026e3c0, 0xc0b6fe, 0x2c, 0xc0004b3fa8, 0x1, 0x1)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/mail.(*worker).forgotPasswordMail(0xc0002ce8a0)
+	D:/go/src/github.com/vuongabc92/octocv/http/mail/worker.go:80 +0x2d8
+created by github.com/vuongabc92/octocv/http/mail.(*worker).Waiting
+	D:/go/src/github.com/vuongabc92/octocv/http/mail/worker.go:29 +0x68
+
+error: 2019/11/17 21:29:33 Can not send forgot password mail. Error: read tcp 192.168.1.104:56681->34.235.90.221:25: wsarecv: An existing connection was forcibly closed by the remote host. [Request ID: PeDen/J8mXX2vE0K-000002] 
+goroutine 27 [running]:
+runtime/debug.Stack(0x40bad3, 0xc00023a4f0, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc000258540, 0xc0b6fe, 0x2c, 0xc0003cffa8, 0x1, 0x1)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/mail.(*worker).forgotPasswordMail(0xc000051120)
+	D:/go/src/github.com/vuongabc92/octocv/http/mail/worker.go:80 +0x2d8
+created by github.com/vuongabc92/octocv/http/mail.(*worker).Waiting
+	D:/go/src/github.com/vuongabc92/octocv/http/mail/worker.go:29 +0x68
+
+error: 2019/11/17 21:41:10 Can not process to send reclaim password instruction. Error: mongo: no documents in result [Request ID: PeDen/3h4Prnalou-000001] 
+goroutine 56 [running]:
+runtime/debug.Stack(0xc00008d6d8, 0xa5c110, 0x12e)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc0002d2300, 0xc1309b, 0x3f, 0xc0004177a8, 0x1, 0x1)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/router/auth.(*authRouter).forgotPassword(0xc0002ae270, 0xc000053560, 0xc000369080, 0xaf2200, 0xc0000516d0)
+	D:/go/src/github.com/vuongabc92/octocv/http/router/auth/auth_routes.go:89 +0x1bb
+github.com/vuongabc92/octocv/http/middleware.RequestID.WrapHandler.func1(0xc000053560, 0xc000369080, 0x0, 0x0)
+	D:/go/src/github.com/vuongabc92/octocv/http/middleware/request_id.go:78 +0x353
+github.com/vuongabc92/octocv/http/middleware.Lang.WrapHandler.func1(0xc000053560, 0xc000369080, 0xc0002cc60b, 0xb)
+	D:/go/src/github.com/vuongabc92/octocv/http/middleware/lang.go:28 +0x1f1
+github.com/vuongabc92/octocv/http.(*Server).makeHTTPHandler.func1(0xd87a60, 0xc0003dc000, 0xc000346700)
+	D:/go/src/github.com/vuongabc92/octocv/http/server.go:205 +0x283
+net/http.HandlerFunc.ServeHTTP(0xc000004800, 0xd87a60, 0xc0003dc000, 0xc000346700)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/csrf.(*csrf).ServeHTTP(0xc0002b6300, 0xd87a60, 0xc0003dc000, 0xc000346600)
+	D:/go/src/github.com/gorilla/csrf/csrf.go:297 +0x6bd
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0002b6240, 0xd87a60, 0xc0003dc000, 0xc000350600)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc000324000, 0xd87a60, 0xc0003dc000, 0xc000350600)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc0003ce000, 0xd88ce0, 0xc0002f0b40)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/17 21:41:10 Handler for POST /forgot-password returned error: mongo: no documents in result [Request ID: PeDen/3h4Prnalou-000001] 
+goroutine 56 [running]:
+runtime/debug.Stack(0x40bad3, 0xc00041c020, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc0002d2300, 0xc0803c, 0x24, 0xc000417a30, 0x3, 0x3)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http.(*Server).makeHTTPHandler.func1(0xd87a60, 0xc0003dc000, 0xc000346700)
+	D:/go/src/github.com/vuongabc92/octocv/http/server.go:208 +0x411
+net/http.HandlerFunc.ServeHTTP(0xc000004800, 0xd87a60, 0xc0003dc000, 0xc000346700)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/csrf.(*csrf).ServeHTTP(0xc0002b6300, 0xd87a60, 0xc0003dc000, 0xc000346600)
+	D:/go/src/github.com/gorilla/csrf/csrf.go:297 +0x6bd
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0002b6240, 0xd87a60, 0xc0003dc000, 0xc000350600)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc000324000, 0xd87a60, 0xc0003dc000, 0xc000350600)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc0003ce000, 0xd88ce0, 0xc0002f0b40)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/17 21:41:10 Error status code: 500, error message: mongo: no documents in result  
+goroutine 56 [running]:
+runtime/debug.Stack(0x40bad3, 0xc00041c0b0, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc0003fcd50, 0xc0a4b8, 0x28, 0xc000417838, 0x2, 0x2)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/httputils.MakeErrorHandler.func1(0xd87a60, 0xc0003dc000, 0xc000346700)
+	D:/go/src/github.com/vuongabc92/octocv/http/httputils/httputils.go:39 +0x233
+github.com/vuongabc92/octocv/http.(*Server).makeHTTPHandler.func1(0xd87a60, 0xc0003dc000, 0xc000346700)
+	D:/go/src/github.com/vuongabc92/octocv/http/server.go:210 +0x30d
+net/http.HandlerFunc.ServeHTTP(0xc000004800, 0xd87a60, 0xc0003dc000, 0xc000346700)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/csrf.(*csrf).ServeHTTP(0xc0002b6300, 0xd87a60, 0xc0003dc000, 0xc000346600)
+	D:/go/src/github.com/gorilla/csrf/csrf.go:297 +0x6bd
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0002b6240, 0xd87a60, 0xc0003dc000, 0xc000350600)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc000324000, 0xd87a60, 0xc0003dc000, 0xc000350600)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc0003ce000, 0xd88ce0, 0xc0002f0b40)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/17 21:41:33 Can not process to send reclaim password instruction. Error: mongo: no documents in result [Request ID: PeDen/3h4Prnalou-000003] 
+goroutine 14 [running]:
+runtime/debug.Stack(0xc00008d6d8, 0xa5c110, 0x12e)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc0002d2300, 0xc1309b, 0x3f, 0xc0002fd7a8, 0x1, 0x1)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/router/auth.(*authRouter).forgotPassword(0xc0002ae270, 0xc0000526c0, 0xc0003fd530, 0xaf2200, 0xc00016fc60)
+	D:/go/src/github.com/vuongabc92/octocv/http/router/auth/auth_routes.go:89 +0x1bb
+github.com/vuongabc92/octocv/http/middleware.RequestID.WrapHandler.func1(0xc0000526c0, 0xc0003fd530, 0x0, 0x0)
+	D:/go/src/github.com/vuongabc92/octocv/http/middleware/request_id.go:78 +0x353
+github.com/vuongabc92/octocv/http/middleware.Lang.WrapHandler.func1(0xc0000526c0, 0xc0003fd530, 0xc00016c88b, 0xb)
+	D:/go/src/github.com/vuongabc92/octocv/http/middleware/lang.go:28 +0x1f1
+github.com/vuongabc92/octocv/http.(*Server).makeHTTPHandler.func1(0xd87a60, 0xc0004440e0, 0xc0003d6b00)
+	D:/go/src/github.com/vuongabc92/octocv/http/server.go:205 +0x283
+net/http.HandlerFunc.ServeHTTP(0xc000004800, 0xd87a60, 0xc0004440e0, 0xc0003d6b00)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/csrf.(*csrf).ServeHTTP(0xc0002ec3c0, 0xd87a60, 0xc0004440e0, 0xc0003d6a00)
+	D:/go/src/github.com/gorilla/csrf/csrf.go:297 +0x6bd
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0002b6240, 0xd87a60, 0xc0004440e0, 0xc0003d6500)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc000324000, 0xd87a60, 0xc0004440e0, 0xc0003d6500)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc0003268c0, 0xd88ce0, 0xc0003be080)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/17 21:41:33 Handler for POST /forgot-password returned error: mongo: no documents in result [Request ID: PeDen/3h4Prnalou-000003] 
+goroutine 14 [running]:
+runtime/debug.Stack(0x40bad3, 0xc00016fe90, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc0002d2300, 0xc0803c, 0x24, 0xc0002fda30, 0x3, 0x3)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http.(*Server).makeHTTPHandler.func1(0xd87a60, 0xc0004440e0, 0xc0003d6b00)
+	D:/go/src/github.com/vuongabc92/octocv/http/server.go:208 +0x411
+net/http.HandlerFunc.ServeHTTP(0xc000004800, 0xd87a60, 0xc0004440e0, 0xc0003d6b00)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/csrf.(*csrf).ServeHTTP(0xc0002ec3c0, 0xd87a60, 0xc0004440e0, 0xc0003d6a00)
+	D:/go/src/github.com/gorilla/csrf/csrf.go:297 +0x6bd
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0002b6240, 0xd87a60, 0xc0004440e0, 0xc0003d6500)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc000324000, 0xd87a60, 0xc0004440e0, 0xc0003d6500)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc0003268c0, 0xd88ce0, 0xc0003be080)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/17 21:41:33 Error status code: 500, error message: mongo: no documents in result  
+goroutine 14 [running]:
+runtime/debug.Stack(0x40bad3, 0xc00016ff20, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc0003c0de0, 0xc0a4b8, 0x28, 0xc0002fd838, 0x2, 0x2)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/httputils.MakeErrorHandler.func1(0xd87a60, 0xc0004440e0, 0xc0003d6b00)
+	D:/go/src/github.com/vuongabc92/octocv/http/httputils/httputils.go:39 +0x233
+github.com/vuongabc92/octocv/http.(*Server).makeHTTPHandler.func1(0xd87a60, 0xc0004440e0, 0xc0003d6b00)
+	D:/go/src/github.com/vuongabc92/octocv/http/server.go:210 +0x30d
+net/http.HandlerFunc.ServeHTTP(0xc000004800, 0xd87a60, 0xc0004440e0, 0xc0003d6b00)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/csrf.(*csrf).ServeHTTP(0xc0002ec3c0, 0xd87a60, 0xc0004440e0, 0xc0003d6a00)
+	D:/go/src/github.com/gorilla/csrf/csrf.go:297 +0x6bd
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0002b6240, 0xd87a60, 0xc0004440e0, 0xc0003d6500)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc000324000, 0xd87a60, 0xc0004440e0, 0xc0003d6500)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc0003268c0, 0xd88ce0, 0xc0003be080)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/17 21:42:11 Can not process to send reclaim password instruction. Error: mongo: no documents in result [Request ID: PeDen/wbSAjOxKs7-000002] 
+goroutine 29 [running]:
+runtime/debug.Stack(0xc0003436d8, 0xa5c110, 0x12e)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc0002b23c0, 0xc1309b, 0x3f, 0xc0003077a8, 0x1, 0x1)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/router/auth.(*authRouter).forgotPassword(0xc0002b24b0, 0xc00025e480, 0xc00049ad20, 0xaf2200, 0xc00039f590)
+	D:/go/src/github.com/vuongabc92/octocv/http/router/auth/auth_routes.go:89 +0x1bb
+github.com/vuongabc92/octocv/http/middleware.RequestID.WrapHandler.func1(0xc00025e480, 0xc00049ad20, 0x0, 0x0)
+	D:/go/src/github.com/vuongabc92/octocv/http/middleware/request_id.go:78 +0x353
+github.com/vuongabc92/octocv/http/middleware.Lang.WrapHandler.func1(0xc00025e480, 0xc00049ad20, 0xc000390313, 0xb)
+	D:/go/src/github.com/vuongabc92/octocv/http/middleware/lang.go:28 +0x1f1
+github.com/vuongabc92/octocv/http.(*Server).makeHTTPHandler.func1(0xd87a60, 0xc0003b60e0, 0xc000372900)
+	D:/go/src/github.com/vuongabc92/octocv/http/server.go:205 +0x283
+net/http.HandlerFunc.ServeHTTP(0xc000004b80, 0xd87a60, 0xc0003b60e0, 0xc000372900)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/csrf.(*csrf).ServeHTTP(0xc000290180, 0xd87a60, 0xc0003b60e0, 0xc000372800)
+	D:/go/src/github.com/gorilla/csrf/csrf.go:297 +0x6bd
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0002b8300, 0xd87a60, 0xc0003b60e0, 0xc000372300)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc0002de0d0, 0xd87a60, 0xc0003b60e0, 0xc000372300)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc0001b54a0, 0xd88ce0, 0xc000358040)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/17 21:42:11 Handler for POST /forgot-password returned error: mongo: no documents in result [Request ID: PeDen/wbSAjOxKs7-000002] 
+goroutine 29 [running]:
+runtime/debug.Stack(0x40bad3, 0xc00039fee0, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc0002b23c0, 0xc0803c, 0x24, 0xc000307a30, 0x3, 0x3)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http.(*Server).makeHTTPHandler.func1(0xd87a60, 0xc0003b60e0, 0xc000372900)
+	D:/go/src/github.com/vuongabc92/octocv/http/server.go:208 +0x411
+net/http.HandlerFunc.ServeHTTP(0xc000004b80, 0xd87a60, 0xc0003b60e0, 0xc000372900)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/csrf.(*csrf).ServeHTTP(0xc000290180, 0xd87a60, 0xc0003b60e0, 0xc000372800)
+	D:/go/src/github.com/gorilla/csrf/csrf.go:297 +0x6bd
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0002b8300, 0xd87a60, 0xc0003b60e0, 0xc000372300)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc0002de0d0, 0xd87a60, 0xc0003b60e0, 0xc000372300)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc0001b54a0, 0xd88ce0, 0xc000358040)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/17 21:42:11 Error status code: 500, error message: mongo: no documents in result  
+goroutine 29 [running]:
+runtime/debug.Stack(0x40bad3, 0xc00039ff70, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc000393230, 0xc0a4b8, 0x28, 0xc000307838, 0x2, 0x2)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/httputils.MakeErrorHandler.func1(0xd87a60, 0xc0003b60e0, 0xc000372900)
+	D:/go/src/github.com/vuongabc92/octocv/http/httputils/httputils.go:39 +0x233
+github.com/vuongabc92/octocv/http.(*Server).makeHTTPHandler.func1(0xd87a60, 0xc0003b60e0, 0xc000372900)
+	D:/go/src/github.com/vuongabc92/octocv/http/server.go:210 +0x30d
+net/http.HandlerFunc.ServeHTTP(0xc000004b80, 0xd87a60, 0xc0003b60e0, 0xc000372900)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/csrf.(*csrf).ServeHTTP(0xc000290180, 0xd87a60, 0xc0003b60e0, 0xc000372800)
+	D:/go/src/github.com/gorilla/csrf/csrf.go:297 +0x6bd
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0002b8300, 0xd87a60, 0xc0003b60e0, 0xc000372300)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc0002de0d0, 0xd87a60, 0xc0003b60e0, 0xc000372300)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc0001b54a0, 0xd88ce0, 0xc000358040)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/17 21:42:54 Can not process to send reclaim password instruction. Error: mongo: no documents in result [Request ID: PeDen/wbSAjOxKs7-000005] 
+goroutine 14 [running]:
+runtime/debug.Stack(0xc0003476d8, 0xa5c110, 0x12e)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc0002b23c0, 0xc1309b, 0x3f, 0xc0002257a8, 0x1, 0x1)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/router/auth.(*authRouter).forgotPassword(0xc0002b24b0, 0xc00035e5a0, 0xc000393bc0, 0xaf2200, 0xc0001ae630)
+	D:/go/src/github.com/vuongabc92/octocv/http/router/auth/auth_routes.go:89 +0x1bb
+github.com/vuongabc92/octocv/http/middleware.RequestID.WrapHandler.func1(0xc00035e5a0, 0xc000393bc0, 0x0, 0x0)
+	D:/go/src/github.com/vuongabc92/octocv/http/middleware/request_id.go:78 +0x353
+github.com/vuongabc92/octocv/http/middleware.Lang.WrapHandler.func1(0xc00035e5a0, 0xc000393bc0, 0xc0002e3603, 0xb)
+	D:/go/src/github.com/vuongabc92/octocv/http/middleware/lang.go:28 +0x1f1
+github.com/vuongabc92/octocv/http.(*Server).makeHTTPHandler.func1(0xd87a60, 0xc0003b62a0, 0xc000373700)
+	D:/go/src/github.com/vuongabc92/octocv/http/server.go:205 +0x283
+net/http.HandlerFunc.ServeHTTP(0xc000004b80, 0xd87a60, 0xc0003b62a0, 0xc000373700)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/csrf.(*csrf).ServeHTTP(0xc000290f00, 0xd87a60, 0xc0003b62a0, 0xc000373600)
+	D:/go/src/github.com/gorilla/csrf/csrf.go:297 +0x6bd
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0002b8300, 0xd87a60, 0xc0003b62a0, 0xc000373200)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc0002de0d0, 0xd87a60, 0xc0003b62a0, 0xc000373200)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc0003a43c0, 0xd88ce0, 0xc0003584c0)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/17 21:42:54 Handler for POST /forgot-password returned error: mongo: no documents in result [Request ID: PeDen/wbSAjOxKs7-000005] 
+goroutine 14 [running]:
+runtime/debug.Stack(0x40bad3, 0xc0001ae860, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc0002b23c0, 0xc0803c, 0x24, 0xc000225a30, 0x3, 0x3)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http.(*Server).makeHTTPHandler.func1(0xd87a60, 0xc0003b62a0, 0xc000373700)
+	D:/go/src/github.com/vuongabc92/octocv/http/server.go:208 +0x411
+net/http.HandlerFunc.ServeHTTP(0xc000004b80, 0xd87a60, 0xc0003b62a0, 0xc000373700)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/csrf.(*csrf).ServeHTTP(0xc000290f00, 0xd87a60, 0xc0003b62a0, 0xc000373600)
+	D:/go/src/github.com/gorilla/csrf/csrf.go:297 +0x6bd
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0002b8300, 0xd87a60, 0xc0003b62a0, 0xc000373200)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc0002de0d0, 0xd87a60, 0xc0003b62a0, 0xc000373200)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc0003a43c0, 0xd88ce0, 0xc0003584c0)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/17 21:42:54 Error status code: 500, error message: mongo: no documents in result  
+goroutine 14 [running]:
+runtime/debug.Stack(0x40bad3, 0xc0001ae8f0, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc0002e71d0, 0xc0a4b8, 0x28, 0xc000225838, 0x2, 0x2)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/httputils.MakeErrorHandler.func1(0xd87a60, 0xc0003b62a0, 0xc000373700)
+	D:/go/src/github.com/vuongabc92/octocv/http/httputils/httputils.go:39 +0x233
+github.com/vuongabc92/octocv/http.(*Server).makeHTTPHandler.func1(0xd87a60, 0xc0003b62a0, 0xc000373700)
+	D:/go/src/github.com/vuongabc92/octocv/http/server.go:210 +0x30d
+net/http.HandlerFunc.ServeHTTP(0xc000004b80, 0xd87a60, 0xc0003b62a0, 0xc000373700)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/csrf.(*csrf).ServeHTTP(0xc000290f00, 0xd87a60, 0xc0003b62a0, 0xc000373600)
+	D:/go/src/github.com/gorilla/csrf/csrf.go:297 +0x6bd
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0002b8300, 0xd87a60, 0xc0003b62a0, 0xc000373200)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc0002de0d0, 0xd87a60, 0xc0003b62a0, 0xc000373200)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc0003a43c0, 0xd88ce0, 0xc0003584c0)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/18 20:36:12 Error status code: 404, error message: page not found  
+goroutine 30 [running]:
+runtime/debug.Stack(0x40bad3, 0xc000094260, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc0002608d0, 0xc0a4ba, 0x28, 0xc000091a28, 0x2, 0x2)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/httputils.MakeErrorHandler.func1(0xd87a60, 0xc0003c22a0, 0xc00034d100)
+	D:/go/src/github.com/vuongabc92/octocv/http/httputils/httputils.go:39 +0x233
+net/http.HandlerFunc.ServeHTTP(0xc0001d5a60, 0xd87a60, 0xc0003c22a0, 0xc00034d100)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0000b8300, 0xd87a60, 0xc0003c22a0, 0xc00034cf00)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc000109520, 0xd87a60, 0xc0003c22a0, 0xc00034cf00)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc0001cdd60, 0xd88ce0, 0xc000388040)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/19 06:31:20 Error status code: 404, error message: page not found  
+goroutine 33 [running]:
+runtime/debug.Stack(0x40bad3, 0xc000252240, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc000334c30, 0xc0a971, 0x28, 0xc000495a28, 0x2, 0x2)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/httputils.MakeErrorHandler.func1(0xd87c60, 0xc0003d22a0, 0xc000333300)
+	D:/go/src/github.com/vuongabc92/octocv/http/httputils/httputils.go:39 +0x233
+net/http.HandlerFunc.ServeHTTP(0xc0000047a0, 0xd87c60, 0xc0003d22a0, 0xc000333300)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000274240, 0xd87c60, 0xc0003d22a0, 0xc000333100)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc0002d6000, 0xd87c60, 0xc0003d22a0, 0xc000333100)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc0003bc0a0, 0xd88f20, 0xc000360d40)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/19 06:31:47 [<nil>] [Request ID: PeDen/QH9YCX0aLK-000004] 
+goroutine 33 [running]:
+runtime/debug.Stack(0x10, 0x10, 0xaf84c0)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Error(0xc00027e360, 0xc0004498f0, 0x1, 0x1)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:56 +0x60
+github.com/vuongabc92/octocv/http/actions.Auth.Register(0xc0000526c0, 0xc000244580, 0xf, 0xc000338660, 0x14, 0xc0002f0040, 0x6, 0xc00009c858, 0x12eb940)
+	D:/go/src/github.com/vuongabc92/octocv/http/actions/auth.go:42 +0x230
+github.com/vuongabc92/octocv/http/router/auth.(*authRouter).register(0xc00026e210, 0xc0000526c0, 0xc000336360, 0xaf23a0, 0xc0004487e0)
+	D:/go/src/github.com/vuongabc92/octocv/http/router/auth/auth_routes.go:68 +0x22f
+github.com/vuongabc92/octocv/http/middleware.RequestID.WrapHandler.func1(0xc0000526c0, 0xc000336360, 0x0, 0x0)
+	D:/go/src/github.com/vuongabc92/octocv/http/middleware/request_id.go:78 +0x353
+github.com/vuongabc92/octocv/http/middleware.Lang.WrapHandler.func1(0xc0000526c0, 0xc000336360, 0xc0002f0000, 0x9)
+	D:/go/src/github.com/vuongabc92/octocv/http/middleware/lang.go:28 +0x1f1
+github.com/vuongabc92/octocv/http.(*Server).makeHTTPHandler.func1(0xd87c60, 0xc00044a0e0, 0xc000478a00)
+	D:/go/src/github.com/vuongabc92/octocv/http/server.go:205 +0x283
+net/http.HandlerFunc.ServeHTTP(0xc000004660, 0xd87c60, 0xc00044a0e0, 0xc000478a00)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/csrf.(*csrf).ServeHTTP(0xc0002aa540, 0xd87c60, 0xc00044a0e0, 0xc000478900)
+	D:/go/src/github.com/gorilla/csrf/csrf.go:297 +0x6bd
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000274240, 0xd87c60, 0xc00044a0e0, 0xc000478500)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc0002d6000, 0xd87c60, 0xc00044a0e0, 0xc000478500)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc0003bc0a0, 0xd88f20, 0xc000360d40)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/19 06:33:34 [<nil>] [Request ID: PeDen/6uEMDx9a7W-000001] 
+goroutine 23 [running]:
+runtime/debug.Stack(0x0, 0x0, 0x0)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa8
+github.com/vuongabc92/octocv/http/log.(*Log).Error(0xc0002547e0, 0xc000051bc0, 0x1, 0x1)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:56 +0x6c
+github.com/vuongabc92/octocv/http/actions.Auth.Register(0xc000052b40, 0xc0000183d0, 0xf, 0xc00001c720, 0x15, 0xc000360101, 0x6, 0x0, 0x0)
+	D:/go/src/github.com/vuongabc92/octocv/http/actions/auth.go:42 +0xdb9
+github.com/vuongabc92/octocv/http/router/auth.(*authRouter).register(0xc0002e6090, 0xc000052b40, 0xc0002a2e10, 0x0, 0x0)
+	D:/go/src/github.com/vuongabc92/octocv/http/router/auth/auth_routes.go:68 +0x3f3
+github.com/vuongabc92/octocv/http/middleware.RequestID.WrapHandler.func1(0xc000052b40, 0xc0002a2e10, 0x0, 0x0)
+	D:/go/src/github.com/vuongabc92/octocv/http/middleware/request_id.go:78 +0x563
+github.com/vuongabc92/octocv/http/middleware.Lang.WrapHandler.func1(0xc000052b40, 0xc0002a2e10, 0x0, 0x0)
+	D:/go/src/github.com/vuongabc92/octocv/http/middleware/lang.go:28 +0x319
+github.com/vuongabc92/octocv/http.(*Server).makeHTTPHandler.func1(0x104dfc0, 0xc0003a0000, 0xc000398500)
+	D:/go/src/github.com/vuongabc92/octocv/http/server.go:205 +0x31c
+net/http.HandlerFunc.ServeHTTP(0xc0002f2340, 0x104dfc0, 0xc0003a0000, 0xc000398500)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/csrf.(*csrf).ServeHTTP(0xc0002aa240, 0x104dfc0, 0xc0003a0000, 0xc000398500)
+	D:/go/src/github.com/gorilla/csrf/csrf.go:297 +0x68c
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0002fe000, 0x104dfc0, 0xc0003a0000, 0xc000398300)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0x220
+net/http.serverHandler.ServeHTTP(0xc0002fc000, 0x104dfc0, 0xc0003a0000, 0xc000398000)
+	C:/Go/src/net/http/server.go:2774 +0x1fd
+net/http.(*conn).serve(0xc0001ab540, 0x104f080, 0xc0000267c0)
+	C:/Go/src/net/http/server.go:1878 +0x146a
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x7be
+
+error: 2019/11/19 06:36:53 [<nil>] [Request ID: PeDen/tvttwcj4hL-000001] 
+goroutine 51 [running]:
+runtime/debug.Stack(0x0, 0x0, 0x0)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa8
+github.com/vuongabc92/octocv/http/log.(*Log).Error(0xc00029c300, 0xc000259950, 0x1, 0x1)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:56 +0x6c
+github.com/vuongabc92/octocv/http/actions.Auth.Register(0xc0002523c0, 0xc000364440, 0xf, 0xc000366620, 0x15, 0xc0003ac041, 0x6, 0x0, 0x0)
+	D:/go/src/github.com/vuongabc92/octocv/http/actions/auth.go:42 +0xdb9
+github.com/vuongabc92/octocv/http/router/auth.(*authRouter).register(0xc000236ab0, 0xc0002523c0, 0xc000254600, 0x0, 0x0)
+	D:/go/src/github.com/vuongabc92/octocv/http/router/auth/auth_routes.go:68 +0x3f3
+github.com/vuongabc92/octocv/http/middleware.RequestID.WrapHandler.func1(0xc0002523c0, 0xc000254600, 0x0, 0x0)
+	D:/go/src/github.com/vuongabc92/octocv/http/middleware/request_id.go:78 +0x563
+github.com/vuongabc92/octocv/http/middleware.Lang.WrapHandler.func1(0xc0002523c0, 0xc000254600, 0x0, 0x0)
+	D:/go/src/github.com/vuongabc92/octocv/http/middleware/lang.go:28 +0x319
+github.com/vuongabc92/octocv/http.(*Server).makeHTTPHandler.func1(0x104dfc0, 0xc000396000, 0xc000386500)
+	D:/go/src/github.com/vuongabc92/octocv/http/server.go:205 +0x31c
+net/http.HandlerFunc.ServeHTTP(0xc0001e18c0, 0x104dfc0, 0xc000396000, 0xc000386500)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/csrf.(*csrf).ServeHTTP(0xc00036c300, 0x104dfc0, 0xc000396000, 0xc000386500)
+	D:/go/src/github.com/gorilla/csrf/csrf.go:297 +0x68c
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0000b8300, 0x104dfc0, 0xc000396000, 0xc000386300)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0x220
+net/http.serverHandler.ServeHTTP(0xc00010b520, 0x104dfc0, 0xc000396000, 0xc000185300)
+	C:/Go/src/net/http/server.go:2774 +0x1fd
+net/http.(*conn).serve(0xc000374000, 0x104f080, 0xc000312440)
+	C:/Go/src/net/http/server.go:1878 +0x146a
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x7be
+
+error: 2019/11/19 06:39:54 [<nil>] [Request ID: PeDen/shDEBCJgnY-000001] 
+goroutine 9 [running]:
+runtime/debug.Stack(0x10, 0x10, 0xaf84c0)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Error(0xc0002b6300, 0xc0002658b0, 0x1, 0x1)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:56 +0x60
+github.com/vuongabc92/octocv/http/actions.Auth.Register(0xc00025e300, 0xc000274140, 0xf, 0xc000392140, 0x15, 0xc0003c2041, 0x6, 0xc0002684b0, 0x12eb940)
+	D:/go/src/github.com/vuongabc92/octocv/http/actions/auth.go:42 +0x230
+github.com/vuongabc92/octocv/http/router/auth.(*authRouter).register(0xc000240ab0, 0xc00025e300, 0xc000260510, 0xaf23a0, 0xc0002647a0)
+	D:/go/src/github.com/vuongabc92/octocv/http/router/auth/auth_routes.go:68 +0x22f
+github.com/vuongabc92/octocv/http/middleware.RequestID.WrapHandler.func1(0xc00025e300, 0xc000260510, 0x0, 0x0)
+	D:/go/src/github.com/vuongabc92/octocv/http/middleware/request_id.go:78 +0x353
+github.com/vuongabc92/octocv/http/middleware.Lang.WrapHandler.func1(0xc00025e300, 0xc000260510, 0xc0003c2048, 0xb)
+	D:/go/src/github.com/vuongabc92/octocv/http/middleware/lang.go:28 +0x1f1
+github.com/vuongabc92/octocv/http.(*Server).makeHTTPHandler.func1(0xd87cc0, 0xc0003a2000, 0xc00027c700)
+	D:/go/src/github.com/vuongabc92/octocv/http/server.go:205 +0x283
+net/http.HandlerFunc.ServeHTTP(0xc0001d5920, 0xd87cc0, 0xc0003a2000, 0xc00027c700)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/csrf.(*csrf).ServeHTTP(0xc0003b2000, 0xd87cc0, 0xc0003a2000, 0xc00027c600)
+	D:/go/src/github.com/gorilla/csrf/csrf.go:297 +0x6bd
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0000b8300, 0xd87cc0, 0xc0003a2000, 0xc00027c100)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc000105930, 0xd87cc0, 0xc0003a2000, 0xc00027c100)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc00038a000, 0xd88f80, 0xc00026e100)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/19 06:42:12 [<nil>] [Request ID: PeDen/00bOw1PzjF-000001] 
+goroutine 36 [running]:
+runtime/debug.Stack(0x0, 0x0, 0x0)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa8
+github.com/vuongabc92/octocv/http/log.(*Log).Error(0xc0002603c0, 0xc00039c070, 0x1, 0x1)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:56 +0x6c
+github.com/vuongabc92/octocv/http/actions.Auth.Register(0xc0000531a0, 0xc000018820, 0xf, 0xc00001cba0, 0x15, 0xc000300101, 0x6, 0x0, 0x0)
+	D:/go/src/github.com/vuongabc92/octocv/http/actions/auth.go:42 +0xdb9
+github.com/vuongabc92/octocv/http/router/auth.(*authRouter).register(0xc000236e70, 0xc0000531a0, 0xc000261bf0, 0x0, 0x0)
+	D:/go/src/github.com/vuongabc92/octocv/http/router/auth/auth_routes.go:68 +0x3f3
+github.com/vuongabc92/octocv/http/middleware.RequestID.WrapHandler.func1(0xc0000531a0, 0xc000261bf0, 0x0, 0x0)
+	D:/go/src/github.com/vuongabc92/octocv/http/middleware/request_id.go:78 +0x563
+github.com/vuongabc92/octocv/http/middleware.Lang.WrapHandler.func1(0xc0000531a0, 0xc000261bf0, 0x0, 0x0)
+	D:/go/src/github.com/vuongabc92/octocv/http/middleware/lang.go:28 +0x319
+github.com/vuongabc92/octocv/http.(*Server).makeHTTPHandler.func1(0x104e040, 0xc000352000, 0xc0002fe600)
+	D:/go/src/github.com/vuongabc92/octocv/http/server.go:205 +0x31c
+net/http.HandlerFunc.ServeHTTP(0xc0001dfb00, 0x104e040, 0xc000352000, 0xc0002fe600)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/csrf.(*csrf).ServeHTTP(0xc000266300, 0x104e040, 0xc000352000, 0xc0002fe600)
+	D:/go/src/github.com/gorilla/csrf/csrf.go:297 +0x68c
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0000b8480, 0x104e040, 0xc000352000, 0xc0002fe400)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0x220
+net/http.serverHandler.ServeHTTP(0xc0000fda00, 0x104e040, 0xc000352000, 0xc0002fe100)
+	C:/Go/src/net/http/server.go:2774 +0x1fd
+net/http.(*conn).serve(0xc0001dbcc0, 0x104f100, 0xc000026d80)
+	C:/Go/src/net/http/server.go:1878 +0x146a
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x7be
+
+error: 2019/11/19 06:42:49 [<nil>] [Request ID: PeDen/RTSwhHFhIc-000001] 
+goroutine 33 [running]:
+runtime/debug.Stack(0x0, 0x0, 0x0)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa8
+github.com/vuongabc92/octocv/http/log.(*Log).Error(0xc0002b0300, 0xc0002bdfc0, 0x1, 0x1)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:56 +0x6c
+github.com/vuongabc92/octocv/http/actions.Auth.Register(0xc000299140, 0xc0002c07a0, 0xf, 0xc0002b4860, 0x15, 0xc0002e21c1, 0x6, 0x0, 0x0)
+	D:/go/src/github.com/vuongabc92/octocv/http/actions/auth.go:42 +0xdb9
+github.com/vuongabc92/octocv/http/router/auth.(*authRouter).register(0xc000236ab0, 0xc000299140, 0xc0002b1e00, 0x0, 0x0)
+	D:/go/src/github.com/vuongabc92/octocv/http/router/auth/auth_routes.go:68 +0x3f3
+github.com/vuongabc92/octocv/http/middleware.RequestID.WrapHandler.func1(0xc000299140, 0xc0002b1e00, 0x0, 0x0)
+	D:/go/src/github.com/vuongabc92/octocv/http/middleware/request_id.go:78 +0x563
+github.com/vuongabc92/octocv/http/middleware.Lang.WrapHandler.func1(0xc000299140, 0xc0002b1e00, 0x0, 0x0)
+	D:/go/src/github.com/vuongabc92/octocv/http/middleware/lang.go:28 +0x319
+github.com/vuongabc92/octocv/http.(*Server).makeHTTPHandler.func1(0x104e040, 0xc000382000, 0xc000334600)
+	D:/go/src/github.com/vuongabc92/octocv/http/server.go:205 +0x31c
+net/http.HandlerFunc.ServeHTTP(0xc0001df900, 0x104e040, 0xc000382000, 0xc000334600)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/csrf.(*csrf).ServeHTTP(0xc0002c8300, 0x104e040, 0xc000382000, 0xc000334600)
+	D:/go/src/github.com/gorilla/csrf/csrf.go:297 +0x68c
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0000b8300, 0x104e040, 0xc000382000, 0xc000334400)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0x220
+net/http.serverHandler.ServeHTTP(0xc0000fd930, 0x104e040, 0xc000382000, 0xc000370000)
+	C:/Go/src/net/http/server.go:2774 +0x1fd
+net/http.(*conn).serve(0xc0001d7d60, 0x104f100, 0xc000026680)
+	C:/Go/src/net/http/server.go:1878 +0x146a
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x7be
+
+error: 2019/11/19 06:43:46 [<nil>] [Request ID: PeDen/2C1ARRyBnn-000001] 
+goroutine 14 [running]:
+runtime/debug.Stack(0x10, 0x10, 0xaf84c0)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Error(0xc000241080, 0xc0003ca5a0, 0x1, 0x1)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:56 +0x60
+github.com/vuongabc92/octocv/http/actions.Auth.Register(0xc0000535c0, 0xc000018840, 0xf, 0xc00001ef60, 0x15, 0xc0003a6041, 0x6, 0xc000006638, 0x12eb940)
+	D:/go/src/github.com/vuongabc92/octocv/http/actions/auth.go:42 +0x230
+github.com/vuongabc92/octocv/http/router/auth.(*authRouter).register(0xc000241170, 0xc0000535c0, 0xc000307440, 0xaf23a0, 0xc000051490)
+	D:/go/src/github.com/vuongabc92/octocv/http/router/auth/auth_routes.go:68 +0x22f
+github.com/vuongabc92/octocv/http/middleware.RequestID.WrapHandler.func1(0xc0000535c0, 0xc000307440, 0x0, 0x0)
+	D:/go/src/github.com/vuongabc92/octocv/http/middleware/request_id.go:78 +0x353
+github.com/vuongabc92/octocv/http/middleware.Lang.WrapHandler.func1(0xc0000535c0, 0xc000307440, 0xc0003a601a, 0x5)
+	D:/go/src/github.com/vuongabc92/octocv/http/middleware/lang.go:28 +0x1f1
+github.com/vuongabc92/octocv/http.(*Server).makeHTTPHandler.func1(0xd87cc0, 0xc000390000, 0xc000320900)
+	D:/go/src/github.com/vuongabc92/octocv/http/server.go:205 +0x283
+net/http.HandlerFunc.ServeHTTP(0xc0002a6020, 0xd87cc0, 0xc000390000, 0xc000320900)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/csrf.(*csrf).ServeHTTP(0xc000274240, 0xd87cc0, 0xc000390000, 0xc000320800)
+	D:/go/src/github.com/gorilla/csrf/csrf.go:297 +0x6bd
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0000b86c0, 0xd87cc0, 0xc000390000, 0xc0002ec200)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc000107930, 0xd87cc0, 0xc000390000, 0xc0002ec200)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc000382000, 0xd88f80, 0xc0002d6480)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/19 06:43:54 Can not send mail for channel _RegisterConfirmation. Error: gomail: could not send email 1: gomail: invalid address "": mail: no address [Request ID: PeDen/2C1ARRyBnn-000003] 
+goroutine 29 [running]:
+runtime/debug.Stack(0x40bad3, 0xc000516b80, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc000241080, 0xc0c42d, 0x2b, 0xc000503f48, 0x2, 0x2)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/worker.(*mailWorker).sendMail(0xc00026a370, 0xbfe474, 0x15, 0xc000503fa8, 0x436d8d, 0xc20c70)
+	D:/go/src/github.com/vuongabc92/octocv/worker/mail.go:53 +0x251
+github.com/vuongabc92/octocv/worker.(*mailWorker).run.func1(0xc00026a370)
+	D:/go/src/github.com/vuongabc92/octocv/worker/mail.go:32 +0x6e
+created by github.com/vuongabc92/octocv/worker.(*mailWorker).run
+	D:/go/src/github.com/vuongabc92/octocv/worker/mail.go:31 +0x46
+
+error: 2019/11/19 06:52:27 [<nil>] [Request ID: PeDen/OHnpzTAi07-000001] 
+goroutine 27 [running]:
+runtime/debug.Stack(0x10, 0x10, 0xaf84c0)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Error(0xc0002b0360, 0xc0003dc250, 0x1, 0x1)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:56 +0x60
+github.com/vuongabc92/octocv/http/actions.Auth.Register(0xc0003a6240, 0xc000244930, 0xf, 0xc000235500, 0x15, 0xc0001e4c41, 0x6, 0xc00009cc10, 0x12eb940)
+	D:/go/src/github.com/vuongabc92/octocv/http/actions/auth.go:43 +0x230
+github.com/vuongabc92/octocv/http/router/auth.(*authRouter).register(0xc0002d20f0, 0xc0003a6240, 0xc00035e480, 0xaf23a0, 0xc00023b140)
+	D:/go/src/github.com/vuongabc92/octocv/http/router/auth/auth_routes.go:68 +0x22f
+github.com/vuongabc92/octocv/http/middleware.RequestID.WrapHandler.func1(0xc0003a6240, 0xc00035e480, 0x0, 0x0)
+	D:/go/src/github.com/vuongabc92/octocv/http/middleware/request_id.go:78 +0x353
+github.com/vuongabc92/octocv/http/middleware.Lang.WrapHandler.func1(0xc0003a6240, 0xc00035e480, 0xc0001e4c1a, 0x5)
+	D:/go/src/github.com/vuongabc92/octocv/http/middleware/lang.go:28 +0x1f1
+github.com/vuongabc92/octocv/http.(*Server).makeHTTPHandler.func1(0xd87cc0, 0xc0000f41c0, 0xc00017b200)
+	D:/go/src/github.com/vuongabc92/octocv/http/server.go:205 +0x283
+net/http.HandlerFunc.ServeHTTP(0xc0002da400, 0xd87cc0, 0xc0000f41c0, 0xc00017b200)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/csrf.(*csrf).ServeHTTP(0xc0000b83c0, 0xd87cc0, 0xc0000f41c0, 0xc00017b100)
+	D:/go/src/github.com/gorilla/csrf/csrf.go:297 +0x6bd
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000314000, 0xd87cc0, 0xc0000f41c0, 0xc000342200)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc000312000, 0xd87cc0, 0xc0000f41c0, 0xc000342200)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc0001cd360, 0xd88f80, 0xc000304800)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/19 06:59:02 [<nil>] [Request ID: PeDen/FcNeYF617e-000001] 
+goroutine 11 [running]:
+runtime/debug.Stack(0x10, 0x10, 0xaf84c0)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Error(0xc000240d20, 0xc0003ac640, 0x1, 0x1)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:56 +0x60
+github.com/vuongabc92/octocv/http/actions.Auth.Register(0xc00031c8a0, 0xc000244de0, 0xf, 0xc000235860, 0x15, 0xc0002b81a1, 0x6, 0xc00009cc30, 0x12eb940)
+	D:/go/src/github.com/vuongabc92/octocv/http/actions/auth.go:43 +0x230
+github.com/vuongabc92/octocv/http/router/auth.(*authRouter).register(0xc000294270, 0xc00031c8a0, 0xc00032a4b0, 0xaf23a0, 0xc00023b530)
+	D:/go/src/github.com/vuongabc92/octocv/http/router/auth/auth_routes.go:68 +0x22f
+github.com/vuongabc92/octocv/http/middleware.RequestID.WrapHandler.func1(0xc00031c8a0, 0xc00032a4b0, 0x0, 0x0)
+	D:/go/src/github.com/vuongabc92/octocv/http/middleware/request_id.go:78 +0x353
+github.com/vuongabc92/octocv/http/middleware.Lang.WrapHandler.func1(0xc00031c8a0, 0xc00032a4b0, 0xc0002b817a, 0x5)
+	D:/go/src/github.com/vuongabc92/octocv/http/middleware/lang.go:28 +0x1f1
+github.com/vuongabc92/octocv/http.(*Server).makeHTTPHandler.func1(0xd87d00, 0xc0000f41c0, 0xc00017d200)
+	D:/go/src/github.com/vuongabc92/octocv/http/server.go:205 +0x283
+net/http.HandlerFunc.ServeHTTP(0xc000004740, 0xd87d00, 0xc0000f41c0, 0xc00017d200)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/csrf.(*csrf).ServeHTTP(0xc0000b8540, 0xd87d00, 0xc0000f41c0, 0xc00017d100)
+	D:/go/src/github.com/gorilla/csrf/csrf.go:297 +0x6bd
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc00029a240, 0xd87d00, 0xc0000f41c0, 0xc00027c100)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc0002c8000, 0xd87d00, 0xc0000f41c0, 0xc00027c100)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc0002ca8c0, 0xd89000, 0xc00026e100)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/20 20:50:44 Error status code: 404, error message: page not found  
+goroutine 6 [running]:
+runtime/debug.Stack(0x40bad3, 0xc0001b72b0, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc00032db90, 0xc0a9bd, 0x28, 0xc0003bba28, 0x2, 0x2)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/httputils.MakeErrorHandler.func1(0xd87d00, 0xc0003f62a0, 0xc00017ba00)
+	D:/go/src/github.com/vuongabc92/octocv/http/httputils/httputils.go:39 +0x233
+net/http.HandlerFunc.ServeHTTP(0xc000292840, 0xd87d00, 0xc0003f62a0, 0xc00017ba00)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000298240, 0xd87d00, 0xc0003f62a0, 0xc00017b800)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc000266340, 0xd87d00, 0xc0003f62a0, 0xc00017b800)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc00038a0a0, 0xd89000, 0xc00026ea80)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/20 21:53:13 [<nil>] [Request ID: PeDen/fUQbk2bKhF-000003] 
+goroutine 53 [running]:
+runtime/debug.Stack(0x10, 0x10, 0xaf85a0)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Error(0xc0002543c0, 0xc000412c10, 0x1, 0x1)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:56 +0x60
+github.com/vuongabc92/octocv/http/actions.Auth.Register(0xc0002718c0, 0xc0002a8c20, 0x11, 0xc0002a8c60, 0x1b, 0xc00030c1e9, 0x6, 0xc0002a2790, 0x12ec940)
+	D:/go/src/github.com/vuongabc92/octocv/http/actions/auth.go:47 +0x208
+github.com/vuongabc92/octocv/http/router/auth.(*authRouter).register(0xc0002a6090, 0xc0002718c0, 0xc0003f77a0, 0xaf2480, 0xc0002afae0)
+	D:/go/src/github.com/vuongabc92/octocv/http/router/auth/auth_routes.go:68 +0x22f
+github.com/vuongabc92/octocv/http/middleware.RequestID.WrapHandler.func1(0xc0002718c0, 0xc0003f77a0, 0x0, 0x0)
+	D:/go/src/github.com/vuongabc92/octocv/http/middleware/request_id.go:78 +0x353
+github.com/vuongabc92/octocv/http/middleware.Lang.WrapHandler.func1(0xc0002718c0, 0xc0003f77a0, 0xc00030c1e0, 0x8)
+	D:/go/src/github.com/vuongabc92/octocv/http/middleware/lang.go:28 +0x1f1
+github.com/vuongabc92/octocv/http.(*Server).makeHTTPHandler.func1(0xd88080, 0xc0003ce0e0, 0xc0002e8e00)
+	D:/go/src/github.com/vuongabc92/octocv/http/server.go:205 +0x283
+net/http.HandlerFunc.ServeHTTP(0xc00029e380, 0xd88080, 0xc0003ce0e0, 0xc0002e8e00)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/csrf.(*csrf).ServeHTTP(0xc0002b6600, 0xd88080, 0xc0003ce0e0, 0xc0002e8d00)
+	D:/go/src/github.com/gorilla/csrf/csrf.go:297 +0x6bd
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0002b6000, 0xd88080, 0xc0003ce0e0, 0xc0002e8900)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc0002b4000, 0xd88080, 0xc0003ce0e0, 0xc0002e8900)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc00017d680, 0xd893c0, 0xc000304900)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/21 20:59:40 Error status code: 404, error message: page not found  
+goroutine 56 [running]:
+runtime/debug.Stack(0x40bad3, 0xc0002e2030, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc0003ec870, 0xc0bc6d, 0x28, 0xc0003d5a28, 0x2, 0x2)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/httputils.MakeErrorHandler.func1(0xd89180, 0xc00016a000, 0xc00017a300)
+	D:/go/src/github.com/vuongabc92/octocv/http/httputils/httputils.go:39 +0x233
+net/http.HandlerFunc.ServeHTTP(0xc000004a00, 0xd89180, 0xc00016a000, 0xc00017a300)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc00029c240, 0xd89180, 0xc00016a000, 0xc00017a100)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc000302000, 0xd89180, 0xc00016a000, 0xc00017a100)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc0003ae0a0, 0xd8a480, 0xc00026e280)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/21 21:05:17 Error status code: 404, error message: page not found  
+goroutine 56 [running]:
+runtime/debug.Stack(0x40bad3, 0xc0004682e0, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc0003594a0, 0xc0bc6d, 0x28, 0xc0004cda28, 0x2, 0x2)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/httputils.MakeErrorHandler.func1(0xd89180, 0xc0004282a0, 0xc00032b300)
+	D:/go/src/github.com/vuongabc92/octocv/http/httputils/httputils.go:39 +0x233
+net/http.HandlerFunc.ServeHTTP(0xc000004a00, 0xd89180, 0xc0004282a0, 0xc00032b300)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc00027a240, 0xd89180, 0xc0004282a0, 0xc00032b100)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc0002f2000, 0xd89180, 0xc0004282a0, 0xc00032b100)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc0002f40a0, 0xd8a480, 0xc0002e5280)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/21 21:05:20 Error status code: 404, error message: page not found  
+goroutine 28 [running]:
+runtime/debug.Stack(0x40bad3, 0xc0004d83f0, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc0004ee180, 0xc0bc6d, 0x28, 0xc000439a28, 0x2, 0x2)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/httputils.MakeErrorHandler.func1(0xd89180, 0xc0003e47e0, 0xc00017b800)
+	D:/go/src/github.com/vuongabc92/octocv/http/httputils/httputils.go:39 +0x233
+net/http.HandlerFunc.ServeHTTP(0xc000004a00, 0xd89180, 0xc0003e47e0, 0xc00017b800)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc00027a240, 0xd89180, 0xc0003e47e0, 0xc00017b600)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc0002f2000, 0xd89180, 0xc0003e47e0, 0xc00017b600)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc00006a3c0, 0xd8a480, 0xc0003bae40)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/21 21:09:40 Error status code: 404, error message: page not found  
+goroutine 89 [running]:
+runtime/debug.Stack(0x40bad3, 0xc0003ee150, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc000290b10, 0xc0bcb6, 0x28, 0xc0002f7a28, 0x2, 0x2)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/httputils.MakeErrorHandler.func1(0xd891c0, 0xc0003f00e0, 0xc000252f00)
+	D:/go/src/github.com/vuongabc92/octocv/http/httputils/httputils.go:39 +0x233
+net/http.HandlerFunc.ServeHTTP(0xc00025c9a0, 0xd891c0, 0xc0003f00e0, 0xc000252f00)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000266180, 0xd891c0, 0xc0003f00e0, 0xc000252d00)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc00023c680, 0xd891c0, 0xc0003f00e0, 0xc000252d00)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc00018b680, 0xd8a4c0, 0xc000366240)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/21 21:09:49 Error status code: 404, error message: page not found  
+goroutine 89 [running]:
+runtime/debug.Stack(0x40bad3, 0xc00039a460, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc000358d50, 0xc0bcb6, 0x28, 0xc0002f7a28, 0x2, 0x2)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/httputils.MakeErrorHandler.func1(0xd891c0, 0xc00039e380, 0xc000467b00)
+	D:/go/src/github.com/vuongabc92/octocv/http/httputils/httputils.go:39 +0x233
+net/http.HandlerFunc.ServeHTTP(0xc00025c9a0, 0xd891c0, 0xc00039e380, 0xc000467b00)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000266180, 0xd891c0, 0xc00039e380, 0xc000467900)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc00023c680, 0xd891c0, 0xc00039e380, 0xc000467900)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc00018b680, 0xd8a4c0, 0xc000366240)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/21 21:09:50 Error status code: 404, error message: page not found  
+goroutine 88 [running]:
+runtime/debug.Stack(0x40bad3, 0xc00029c010, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc00041e180, 0xc0bcb6, 0x28, 0xc000557a28, 0x2, 0x2)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/httputils.MakeErrorHandler.func1(0xd891c0, 0xc00039e000, 0xc00015e200)
+	D:/go/src/github.com/vuongabc92/octocv/http/httputils/httputils.go:39 +0x233
+net/http.HandlerFunc.ServeHTTP(0xc00025c9a0, 0xd891c0, 0xc00039e000, 0xc00015e200)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000266180, 0xd891c0, 0xc00039e000, 0xc00015e000)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc00023c680, 0xd891c0, 0xc00039e000, 0xc00015e000)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc00018b5e0, 0xd8a4c0, 0xc000366180)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/21 21:09:51 Error status code: 404, error message: page not found  
+goroutine 88 [running]:
+runtime/debug.Stack(0x40bad3, 0xc0000fa530, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc000484300, 0xc0bcb6, 0x28, 0xc000557a28, 0x2, 0x2)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/httputils.MakeErrorHandler.func1(0xd891c0, 0xc00009e0e0, 0xc0004f4800)
+	D:/go/src/github.com/vuongabc92/octocv/http/httputils/httputils.go:39 +0x233
+net/http.HandlerFunc.ServeHTTP(0xc00025c9a0, 0xd891c0, 0xc00009e0e0, 0xc0004f4800)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000266180, 0xd891c0, 0xc00009e0e0, 0xc0004f4600)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc00023c680, 0xd891c0, 0xc00009e0e0, 0xc0004f4600)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc00018b5e0, 0xd8a4c0, 0xc000366180)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/21 21:09:51 Error status code: 404, error message: page not found  
+goroutine 88 [running]:
+runtime/debug.Stack(0x40bad3, 0xc0001e6080, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc0004ccde0, 0xc0bcb6, 0x28, 0xc000557a28, 0x2, 0x2)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/httputils.MakeErrorHandler.func1(0xd891c0, 0xc000324000, 0xc00029a200)
+	D:/go/src/github.com/vuongabc92/octocv/http/httputils/httputils.go:39 +0x233
+net/http.HandlerFunc.ServeHTTP(0xc00025c9a0, 0xd891c0, 0xc000324000, 0xc00029a200)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000266180, 0xd891c0, 0xc000324000, 0xc00029a000)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc00023c680, 0xd891c0, 0xc000324000, 0xc00029a000)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc00018b5e0, 0xd8a4c0, 0xc000366180)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/21 21:10:07 Error status code: 404, error message: page not found  
+goroutine 88 [running]:
+runtime/debug.Stack(0x40bad3, 0xc0001e6980, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc0004cd380, 0xc0bcb6, 0x28, 0xc000557a28, 0x2, 0x2)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/httputils.MakeErrorHandler.func1(0xd891c0, 0xc0003242a0, 0xc00029b100)
+	D:/go/src/github.com/vuongabc92/octocv/http/httputils/httputils.go:39 +0x233
+net/http.HandlerFunc.ServeHTTP(0xc00025c9a0, 0xd891c0, 0xc0003242a0, 0xc00029b100)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000266180, 0xd891c0, 0xc0003242a0, 0xc00029af00)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc00023c680, 0xd891c0, 0xc0003242a0, 0xc00029af00)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc00018b5e0, 0xd8a4c0, 0xc000366180)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/21 21:10:16 Error status code: 404, error message: page not found  
+goroutine 88 [running]:
+runtime/debug.Stack(0x40bad3, 0xc0003ee260, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc0004f65a0, 0xc0bcb6, 0x28, 0xc000557a28, 0x2, 0x2)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/httputils.MakeErrorHandler.func1(0xd891c0, 0xc00009e700, 0xc0004e1100)
+	D:/go/src/github.com/vuongabc92/octocv/http/httputils/httputils.go:39 +0x233
+net/http.HandlerFunc.ServeHTTP(0xc00025c9a0, 0xd891c0, 0xc00009e700, 0xc0004e1100)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000266180, 0xd891c0, 0xc00009e700, 0xc0004e0f00)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc00023c680, 0xd891c0, 0xc00009e700, 0xc0004e0f00)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc00018b5e0, 0xd8a4c0, 0xc000366180)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/21 21:13:17 Error status code: 404, error message: page not found  
+goroutine 147 [running]:
+runtime/debug.Stack(0x40bad3, 0xc000368be0, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc00032ce70, 0xc0bcb6, 0x28, 0xc000587a28, 0x2, 0x2)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/httputils.MakeErrorHandler.func1(0xd891c0, 0xc0000e0380, 0xc000150000)
+	D:/go/src/github.com/vuongabc92/octocv/http/httputils/httputils.go:39 +0x233
+net/http.HandlerFunc.ServeHTTP(0xc00025c9a0, 0xd891c0, 0xc0000e0380, 0xc000150000)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000266180, 0xd891c0, 0xc0000e0380, 0xc00015fe00)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc00023c680, 0xd891c0, 0xc0000e0380, 0xc00015fe00)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc000060fa0, 0xd8a4c0, 0xc0003209c0)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/21 21:13:19 Error status code: 404, error message: page not found  
+goroutine 147 [running]:
+runtime/debug.Stack(0x40bad3, 0xc0003ee010, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc00041e120, 0xc0bcb6, 0x28, 0xc000587a28, 0x2, 0x2)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/httputils.MakeErrorHandler.func1(0xd891c0, 0xc000134000, 0xc0004bc200)
+	D:/go/src/github.com/vuongabc92/octocv/http/httputils/httputils.go:39 +0x233
+net/http.HandlerFunc.ServeHTTP(0xc00025c9a0, 0xd891c0, 0xc000134000, 0xc0004bc200)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000266180, 0xd891c0, 0xc000134000, 0xc0004bc000)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc00023c680, 0xd891c0, 0xc000134000, 0xc0004bc000)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc000060fa0, 0xd8a4c0, 0xc0003209c0)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/21 21:16:59 Error status code: 404, error message: page not found  
+goroutine 58 [running]:
+runtime/debug.Stack(0x40bad3, 0xc00039e090, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc0003aa2d0, 0xc0bcae, 0x28, 0xc000305a28, 0x2, 0x2)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/httputils.MakeErrorHandler.func1(0xd891c0, 0xc0003d4000, 0xc0003c6200)
+	D:/go/src/github.com/vuongabc92/octocv/http/httputils/httputils.go:39 +0x233
+net/http.HandlerFunc.ServeHTTP(0xc0001d5e60, 0xd891c0, 0xc0003d4000, 0xc0003c6200)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0000b8480, 0xd891c0, 0xc0003d4000, 0xc0003c2000)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc0001072b0, 0xd891c0, 0xc0003d4000, 0xc0003c2000)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc0003b2000, 0xd8a4c0, 0xc000026980)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+
+error: 2019/11/21 21:21:43 Error status code: 404, error message: page not found  
+goroutine 59 [running]:
+runtime/debug.Stack(0x40bad3, 0xc0001c6120, 0x10)
+	C:/Go/src/runtime/debug/stack.go:24 +0xa4
+github.com/vuongabc92/octocv/http/log.(*Log).Errorf(0xc0003faae0, 0xc0bcae, 0x28, 0xc0003e1a28, 0x2, 0x2)
+	D:/go/src/github.com/vuongabc92/octocv/http/log/log.go:64 +0x60
+github.com/vuongabc92/octocv/http/httputils.MakeErrorHandler.func1(0xd891c0, 0xc0000f40e0, 0xc00017a800)
+	D:/go/src/github.com/vuongabc92/octocv/http/httputils/httputils.go:39 +0x233
+net/http.HandlerFunc.ServeHTTP(0xc000004a00, 0xd891c0, 0xc0000f40e0, 0xc00017a800)
+	C:/Go/src/net/http/server.go:1995 +0x4b
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc00029a240, 0xd891c0, 0xc0000f40e0, 0xc00017a600)
+	D:/go/src/github.com/gorilla/mux/mux.go:210 +0xea
+net/http.serverHandler.ServeHTTP(0xc000300000, 0xd891c0, 0xc0000f40e0, 0xc00017a600)
+	C:/Go/src/net/http/server.go:2774 +0xaf
+net/http.(*conn).serve(0xc0003a0000, 0xd8a4c0, 0xc0002d6e00)
+	C:/Go/src/net/http/server.go:1878 +0x858
+created by net/http.(*Server).Serve
+	C:/Go/src/net/http/server.go:2884 +0x2fb
+

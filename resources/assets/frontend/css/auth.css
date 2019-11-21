@@ -1,0 +1,295 @@
+@font-face{
+	font-family: "Haas Grot Text R Web";
+	src:url(../fonts/neue-haas-grotesk/400-normal/NeueHaasGrotTextRound-55Roman-Web.eot);
+	src:url(../fonts/neue-haas-grotesk/400-normal/NeueHaasGrotTextRound-55Roman-Web.eot?#iefix) format("embedded-opentype"),
+	url(../fonts/neue-haas-grotesk/400-normal/NeueHaasGrotTextRound-55Roman-Web.woff2) format("woff2"),
+	url(../fonts/neue-haas-grotesk/400-normal/NeueHaasGrotTextRound-55Roman-Web.woff) format("woff");
+	font-weight: 400;
+	font-style: normal
+}
+@font-face{
+	font-family: "Haas Grot Text R Web";
+	src:url(../fonts/neue-haas-grotesk/400-italic/NeueHaasGrotTextRound-56Italic-Web.eot);
+	src:url(../fonts/neue-haas-grotesk/400-italic/NeueHaasGrotTextRound-56Italic-Web.eot?#iefix) format("embedded-opentype"),
+	url(../fonts/neue-haas-grotesk/400-italic/NeueHaasGrotTextRound-56Italic-Web.woff2) format("woff2"),
+	url(../fonts/neue-haas-grotesk/400-italic/NeueHaasGrotTextRound-56Italic-Web.woff) format("woff");
+	font-weight: 400;
+	font-style: italic
+}
+@font-face{
+	font-family: "Haas Grot Text R Web";
+	src:url(../fonts/neue-haas-grotesk/500-normal/NeueHaasGrotTextRound-65Medium-Web.eot);
+	src:url(../fonts/neue-haas-grotesk/500-normal/NeueHaasGrotTextRound-65Medium-Web.eot?#iefix) format("embedded-opentype"),
+	url(../fonts/neue-haas-grotesk/500-normal/NeueHaasGrotTextRound-65Medium-Web.woff2) format("woff2"),
+	url(../fonts/neue-haas-grotesk/500-normal/NeueHaasGrotTextRound-65Medium-Web.woff) format("woff");
+	font-weight: 500;
+	font-style: normal
+}
+@font-face{
+	font-family:"Haas Grot Text R Web";
+	src:url(../fonts/neue-haas-grotesk/500-italic/NeueHaasGrotTextRound-66MediumItalic-Web.eot);
+	src:url(../fonts/neue-haas-grotesk/500-italic/NeueHaasGrotTextRound-66MediumItalic-Web.eot?#iefix) format("embedded-opentype"),
+	url(../fonts/neue-haas-grotesk/500-italic/NeueHaasGrotTextRound-66MediumItalic-Web.woff2) format("woff2"),
+	url(../fonts/neue-haas-grotesk/500-italic/NeueHaasGrotTextRound-66MediumItalic-Web.woff) format("woff");
+	font-weight: 500;
+	font-style: italic
+}
+@font-face{
+	font-family: "Haas Grot Text R Web";
+	src:url(../fonts/neue-haas-grotesk/700-normal/NeueHaasGrotTextRound-75Bold-Web.eot);
+	src:url(../fonts/neue-haas-grotesk/700-normal/NeueHaasGrotTextRound-75Bold-Web.eot?#iefix) format("embedded-opentype"),
+	url(../fonts/neue-haas-grotesk/700-normal/NeueHaasGrotTextRound-75Bold-Web.woff2) format("woff2"),
+	url(../fonts/neue-haas-grotesk/700-normal/NeueHaasGrotTextRound-75Bold-Web.woff) format("woff");
+	font-weight: 700;
+	font-style: normal
+}
+@font-face{
+	font-family:"Haas Grot Text R Web";
+	src:url(../fonts/neue-haas-grotesk/700-italic/NeueHaasGrotTextRound-76BoldItalic-Web.eot);
+	src:url(../fonts/neue-haas-grotesk/700-italic/NeueHaasGrotTextRound-76BoldItalic-Web.eot?#iefix) format("embedded-opentype"),
+	url(../fonts/neue-haas-grotesk/700-italic/NeueHaasGrotTextRound-76BoldItalic-Web.woff2) format("woff2"),
+	url(../fonts/neue-haas-grotesk/700-italic/NeueHaasGrotTextRound-76BoldItalic-Web.woff) format("woff");
+	font-weight: 700;
+	font-style: italic
+}
+body {
+	font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	color: #444;
+	background: #fff;
+	padding: 0;
+	margin: 0;
+}
+.content {
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+.login .content {
+	margin-top: 70px;
+}
+.register .content {
+	margin-top: 4%;
+}
+.auth-title {
+	width: 100%;
+	float: left;
+	margin-bottom: 30px;
+	font-weight: 700;
+	font-size: 24px;
+}
+.auth-connections {
+	width: 100%;
+	float: left;
+}
+.register .auth-connections {
+	margin-top: 25px;
+}
+.auth-link-btn {
+	height: 38px;
+	padding: 0 15px;
+	line-height: 38px;
+	border-radius: 3px;
+	text-align: center;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+	cursor: pointer;
+}
+.auth-link-btn svg {
+    height: 13px;
+    width: 13px;
+    vertical-align: middle;
+    margin-top: -3px;
+    fill: currentColor;
+}
+.auth-google-btn svg {
+    padding: 2px;
+    background-color: #fff;
+	border-radius: 100%;
+}
+.auth-google-btn {
+	width: 82%;
+	float: left;
+	margin-right: 2%;
+	background-color: #3988f2;
+	color: #fff;
+}
+.auth-google-btn:hover {
+    background-color: #217af0;
+	color: #fff;
+}
+.auth-google-btn:active {
+    background-color: #1371ef;
+	color: #fff;
+}
+.auth-fb-btn {
+	width: 16%;
+	float: right;
+	background-color: #3b5998;
+	color: #fff;
+}
+.auth-fb-btn:active {
+    background-color: #30487b;
+	color: #fff;
+}
+.auth-fb-btn:hover {
+    background-color: #344e86;
+	color: #fff;
+}
+.auth-devider {
+	width: 100%;
+	float: left;
+	margin: 20px 0 7px;
+}
+hr.auth-or {
+	overflow: visible;
+    padding: 0;
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    color: #757575;
+    text-align: center;
+}
+hr.auth-or:after {
+	font-size: 15px;
+    display: inline-block;
+    position: relative;
+    top: -9px;
+    padding: 0 16px;
+    background: white;
+}
+.form-oldschool {
+	width: 100%;
+	float: left;
+}
+.auth-form-row {
+	width: 100%;
+	float: left;
+	margin-bottom: 25px;
+}
+.submit-btn-row {
+	margin-bottom: 5px;
+}
+.auth-form-row:last-child {
+	margin-bottom: 0;
+}
+.auth-form-row label {
+	width: 100%;
+	height: 14px;
+	float: left;
+	margin-bottom: 7px;
+	font-size: 14px;
+}
+.auth-form-row label strong {
+	font-weight: 500;
+}
+.auth-form-row label .form-error {
+	color: #f55;
+}
+.auth-form-row label .form-success {
+	color: #099d52;
+}
+.auth-form-row label .form-error span{
+	font-size: 13px;
+}
+.auth-form-row label a.forgot-pass-link {
+	float: right;
+	font-size: 14px;
+	font-weight: normal;
+}
+.auth-form-row input {
+	width: 100%;
+	height: 38px;
+	float: left;
+	padding: 0 15px;
+	border: none;
+	outline: none;
+	border-radius: 4px;
+	background-color: #f5f6f7;
+	border: solid 1px #f2f2f3;
+	font-size: 15px;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.auth-form-row input#password {
+	padding-top: 1px;
+}
+.auth-form-row button[type=submit] {
+	width: 100%;
+	height: 38px;
+	float: left;
+	text-align: center;
+	border: none;
+	background-color: #007aff;
+	color: #fff;
+	border-radius: 3px;
+	cursor: pointer;
+	outline: none;
+}
+.auth-form-row button[type=submit]:hover {
+	background-color: #0276f3;
+}
+.auth-form-row button[type=submit]:active {
+	background-color: #0373ed;
+}
+.auth-form-row svg {
+    height: 16px;
+    width: 16px;
+    vertical-align: middle;
+    margin-top: -3px;
+    fill: currentColor;
+}
+.auth-form-footer a.had-registered-link,
+.auth-form-footer a.was-registered-link {
+	float: left;
+	margin-top: 5px;
+}
+.auth-form-footer span {
+	width: 100%;
+	float: left;
+	margin-top: 20px;
+	font-size: 12px;
+}
+.password-instruction {
+	margin-bottom: 26px;
+}
+.password-instruction p {
+	font: normal 14px/20px "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #333;
+	margin: 20px 0 0 0;
+}
+
+@media screen and (max-width: 480px) {
+	.log-in .content {
+		margin-top: 50px;
+	}
+	.sign-up .content {
+		margin-top: 40px;
+	}
+	.content {
+		width: 100%;
+		float: left;
+		margin-bottom: 40px;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	.header-btn {
+		display: inline-block;
+	}
+	.header-txt {
+		display: none;
+	}
+	.auth-form-row .form-col-left {
+		width: 100%;
+		float: left;
+		margin-right: 0;
+		margin-bottom: 25px;
+	}
+	.auth-form-row .form-col-right {
+		width: 100%;
+		float: left;
+		margin-left: 0;
+	}
+}

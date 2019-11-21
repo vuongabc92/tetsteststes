@@ -1,0 +1,1 @@
+{"virtualbox":{"/vagrant/data":{"guestpath":"/vagrant/data","hostpath":"D:/go/src/github.com/vuongabc92/octocv","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"D:/go/src/github.com/vuongabc92/octocv/deployments/local","disabled":false,"__vagrantfile":true}}}
