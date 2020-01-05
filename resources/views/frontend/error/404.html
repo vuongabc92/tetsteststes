@@ -4,29 +4,27 @@
     <meta charset="UTF-8">
     <title>Error 404 page not found.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="/assets/frontend/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="{{ "css/reset.css" | asset_url }}">
+    <link rel="stylesheet" type="text/css" href="{{ "css/error.css" | asset_url }}">
     <style>
-        body {
-            background-color: #2A333F;
-        }
-        .page-404-wrapper {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .page-404 {
-            width: 100%;
-            height: 500px;
-            float: left;
-            background-image: url("/assets/frontend/images/404.png");
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-position: center;
+        .error-wrapper div.error-logo a span {
+            background-image: url("{{ "images/logo-dark.png" | asset_url }}");
         }
     </style>
 </head>
 <body>
-    <div class="page-404-wrapper">
-        <div class="page-404"></div>
+    <div class="error-wrapper">
+        <div class="error-inner">
+            <div class="error-logo">
+                <a href="/">
+                    <span></span>
+                </a>
+            </div>
+            <div class="error-content">
+                <p class="err-title"><strong>{{ .ErrorCode }}.</strong> <span>{{ .ErrorTitle }}.</span></p>
+                <p class="err-txt">{{ .ErrorContent }}. <ins>We're sorry about that.</ins></p>
+            </div>
+        </div>
     </div>
 </body>
 </html>

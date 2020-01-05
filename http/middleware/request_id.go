@@ -63,17 +63,16 @@ func NewRequestIDMiddleware() RequestID {
 // counter.
 func (r RequestID) WrapHandler(handler func(ctx *octocv.Context, vars map[string]string) error) func(ctx *octocv.Context, vars map[string]string) error {
 	return func(ctx *octocv.Context, vars map[string]string) error {
-		reqContext := ctx.Request.Context()
 		requestID := ctx.Request.Header.Get("X-Request-Id")
+
 		if requestID == "" {
 			myID := atomic.AddUint64(&reqid, 1)
 			requestID = fmt.Sprintf("%s-%06d", prefix, myID)
 		}
 
-		reqContext = context.WithValue(reqContext, config.ContextKeyRequestID, requestID)
-		ctx.Request = ctx.Request.WithContext(reqContext)
+		ctx.Context = context.WithValue(ctx.Context, config.ContextKeyRequestID, requestID)
 		ctx.Logger.SetRequestID(requestID)
-		ctx.Logger.Infof("[Incomming request %s %s %s]", ctx.Request.Method, ctx.Request.RequestURI, ctx.Request.RemoteAddr)
+		ctx.Logger.Infof("[Incoming request %s %s %s]", ctx.Request.Method, ctx.Request.RequestURI, ctx.Request.RemoteAddr)
 
 		return handler(ctx, vars)
 	}

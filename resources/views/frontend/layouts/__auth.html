@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ template "title" . }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ "css/reset.css" | asset_url }}">
+    <link rel="stylesheet" type="text/css" href="{{ "css/auth.css" | asset_url }}">
+    <style>
+        hr.auth-or:after {
+            content: "{{ "or" | trans }}";
+        }
+    </style>
+</head>
+<body>
+<header class="auth-header">
+    <div class="auth-header-inner">
+        <nav class="auth-nav-bar">
+            <a href="/" class="logo">
+                <img src="{{ "images/logo-dark.png" | asset_url }}" />
+            </a>
+            <span class="auth-header-link">
+                {{ template "header" . }}
+            </span>
+        </nav>
+    </div>
+</header>
+<div class="auth-content-wrapper">
+    <div class="auth-content-inner">
+        {{ template "content" . }}
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="{{ "js/global.js" | asset_url }}"></script>
+<script>
+    Octocv.FacebookLogin.setup();
+</script>
+</body>
+</html>

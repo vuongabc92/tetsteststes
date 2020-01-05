@@ -6,8 +6,8 @@ import (
 )
 
 type Experience struct {
-	ID          primitive.ObjectID `bson:"_id,omitempty"`
-	UserID      primitive.ObjectID `bson:"user_id"`
+	Id          primitive.ObjectID `bson:"_id,omitempty"`
+	UserId      primitive.ObjectID `bson:"user_id"`
 	CompanyName string             `bson:"company_name"`
 	JobTitle    string             `bson:"job_title"`
 	TimeFrom    time.Time          `bson:"time_from"`

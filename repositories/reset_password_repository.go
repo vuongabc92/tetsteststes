@@ -15,8 +15,8 @@ func (r *ResetPasswordRepository) FindByEmail(ctx context.Context, email string)
 	return
 }
 
-func (r *ResetPasswordRepository) FindByEmailAndToken(ctx context.Context, email string, token string) (resetPassword models.ResetPassword, err error) {
-	err = r.collection.FindOne(ctx, bson.M{"email": email, "token": token}).Decode(&resetPassword)
+func (r *ResetPasswordRepository) FindByToken(ctx context.Context, token string) (resetPassword models.ResetPassword, err error) {
+	err = r.collection.FindOne(ctx, bson.M{"token": token}).Decode(&resetPassword)
 	return
 }
 

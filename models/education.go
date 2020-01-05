@@ -6,7 +6,7 @@ import (
 )
 
 type Education struct {
-	ID          primitive.ObjectID `bson:"_id,omitempty"`
+	Id          primitive.ObjectID `bson:"_id,omitempty"`
 	UserID      primitive.ObjectID `bson:"user_id"`
 	SchoolName  string             `bson:"school_name"`
 	Title       string             `bson:"title"`

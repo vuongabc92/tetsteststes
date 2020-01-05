@@ -50,32 +50,25 @@ func (r *repository) Insert(ctx context.Context, model interface{}) error {
 }
 
 // Update collection by collection ID
-func (r *repository) Update(ctx context.Context, ID interface{}, model interface{}) error {
-	// If there is field name CreatedAt or UpdatedAt
-	// then auto set field value to current datetime
+func (r *repository) Update(ctx context.Context, model interface{}) error {
 	var (
 		reflectValue = reflect.Indirect(reflect.ValueOf(model))
+		modelId      = reflectValue.FieldByName("Id")
 		updatedAt    = reflectValue.FieldByName("UpdatedAt")
-		now          = helpers.Now()
 	)
 
+	// Every model must contains a field name `Id` and it is primary key.
+	if !modelId.IsValid() {
+		return errors.New("model id is invalid")
+	}
+
+	// If model contains a field name UpdatedAt then every time model is updated
+	// we have to set it to current time.
 	if updatedAt.IsValid() {
-		updatedAt.Set(reflect.ValueOf(now))
+		updatedAt.Set(reflect.ValueOf(helpers.Now()))
 	}
 
-	// Ignore update ID
-	IDIgnore := reflectValue.FieldByName("ID")
-	if IDIgnore.IsValid() {
-		IDIgnore.Set(reflect.Zero(IDIgnore.Type()))
-	}
-
-	_, err := r.collection.UpdateOne(ctx, bson.M{"_id": ID}, bson.M{"$set": model})
-	if err == nil {
-		if IDIgnore.IsValid() {
-			IDIgnore.Set(reflect.ValueOf(ID))
-		}
-	}
-
+	_, err := r.collection.UpdateOne(ctx, bson.M{"_id": modelId.Interface()}, bson.M{"$set": model})
 	return err
 }
 

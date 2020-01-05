@@ -6,8 +6,8 @@ import (
 )
 
 type Skill struct {
-	ID        primitive.ObjectID `bson:"_id,omitempty"`
-	UserID    primitive.ObjectID `bson:"user_id"`
+	Id        primitive.ObjectID `bson:"_id,omitempty"`
+	UserId    primitive.ObjectID `bson:"user_id"`
 	Name      string             `bson:"name"`
 	Rate      uint8              `bson:"rate"`
 	CreatedAt time.Time          `bson:"created_at"`

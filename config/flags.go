@@ -7,8 +7,8 @@ import (
 
 var (
 	ENV              = flag.String("ENV", Development, "Application environment. There are 3 env: development, staging, production, so depend on each env the the system may has some differences.")
-	BaseUrl          = flag.String("base-url", "https://octocv.co", "Application base url.")
-	HttpAddr         = flag.String("server-address", "127.0.0.1:8080", "HTTP service address.")
+	BaseUrl          = flag.String("base-url", "http://localhost:8080", "Application base url.")
+	HttpAddr         = flag.String("server-address", ":8080", "HTTP service address.")
 	WriteTimeout     = flag.Duration("write-timeout", time.Second*15, "The duration for server write timeout.")
 	ReadTimeout      = flag.Duration("read-timeout", time.Second*15, "The duration for server read timeout.")
 	IdleTimeout      = flag.Duration("idle-timeout", time.Second*30, "The duration for server idle timeout.")
@@ -36,9 +36,13 @@ var (
 	SmtpPort            = flag.Int("smtp_port", 25, "SMTP port.")
 	SmtpUsername        = flag.String("smtp_username", "57cea03441dddf", "SMTP authenticate username.")
 	SmtpPassword        = flag.String("smtp_password", "ed8b8702e74bcb", "SMTP authenticated password.")
-	NoReplyEmailAddress = flag.String("noreply_email", "no-reply@octocv.co", "From email address.")
+	NoReplyEmailAddress = flag.String("noreply_email", "no-reply@octocv.co", "No-reply email address.")
+	SupportEmailAddress = flag.String("support_email", "support@octocv.co", "Support email address.")
 
 	// Redis
 	RedisAddress  = flag.String("redis_address", "172.17.12.2:6379", "Redis host string.")
 	RedisPassword = flag.String("redis_pass", "", "Redis connection password.")
+
+	// JWT
+	JWTSecretKey = flag.String("jwt-secret-key", "P5dUPJ72AfMaut2qzt5YENqM4YXQfcPbGhQ5NDEULxbqfLFCYAEwEexY8VyNaXaY", "JWT secret token for generate secure auth token")
 )

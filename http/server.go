@@ -59,7 +59,7 @@ type Server struct {
 	templateEngine *template.Engine
 }
 
-//New server instant
+// New server instant
 func NewServer(opts Options) *Server {
 	flag.Parse()
 	return &Server{
@@ -188,10 +188,14 @@ func (s *Server) makeHTTPHandler(handler httputils.HandlerFunc) http.HandlerFunc
 		// Temporary save form post data as flash message to read
 		// After submit form and get error
 		if strings.ToLower(r.Method) == "post" {
-			r.ParseForm()
+			_ = r.ParseForm()
 
 			formData := session.NewFormData()
 			for k, v := range r.Form {
+				if k == "password" || k == "Password" || k == "pass" {
+					continue
+				}
+
 				formData.AddData(k, v)
 			}
 
@@ -233,6 +237,7 @@ func (s *Server) NewContext(w http.ResponseWriter, r *http.Request) *octocv.Cont
 
 	// New context for every request
 	ctx := &octocv.Context{
+		Context:        r.Context(),
 		Writer:         w,
 		Request:        r,
 		TemplateEngine: s.templateEngine,

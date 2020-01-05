@@ -2,9 +2,11 @@ package octocv
 
 import (
 	"context"
+	"flag"
 	"github.com/go-redis/redis"
 	"github.com/gorilla/csrf"
 	"github.com/gorilla/mux"
+	"github.com/vuongabc92/octocv/config"
 	database "github.com/vuongabc92/octocv/database/mongodb"
 	"github.com/vuongabc92/octocv/helpers"
 	"github.com/vuongabc92/octocv/http/binding"
@@ -138,7 +140,10 @@ func (c *Context) GetRepositoryFactory() *repositories.RepositoryFactory {
 	return repoFactory
 }
 
-func (c *Context) Url(routeName string, queryPairs...string) string {
+// Generate url from route name and queries.
+// The url does not contain host
+// For EX: /login /register /about-use, ....
+func (c *Context) Url(routeName string, queryPairs ...string) string {
 	url, err := c.Router.Get(routeName).URL(queryPairs...)
 	//r := c.Router.Host("").GetName()
 	if err != nil {
@@ -147,4 +152,9 @@ func (c *Context) Url(routeName string, queryPairs...string) string {
 	}
 
 	return url.EscapedPath()
+}
+
+func (c *Context) FullUrl(routeName string, queryPairs ...string) string {
+	flag.Parse()
+	return *config.BaseUrl + c.Url(routeName, queryPairs...)
 }

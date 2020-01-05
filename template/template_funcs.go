@@ -1,9 +1,11 @@
 package template
 
 import (
+	"flag"
 	"github.com/vuongabc92/octocv/config"
 	"github.com/vuongabc92/octocv/helpers"
 	"github.com/vuongabc92/octocv/http/session"
+	"strings"
 )
 
 func MessageBagGet(msgBag *session.MessageBag, field string) string {
@@ -33,5 +35,20 @@ func Trans(key interface{}, agrs ...interface{}) string {
 }
 
 func FrontendAsset(assetPath string) string {
-	return "assets/frontend/" + assetPath + "?v=" + config.AssetVersion
+	pathSplit := strings.Split(assetPath, ".")
+	if pathSplit[len(pathSplit)-1] == "css" || pathSplit[len(pathSplit)-1] == "js" {
+		return "/assets/frontend/" + assetPath + "?v=" + config.AssetVersion
+	}
+
+	return "/assets/frontend/" + assetPath
+}
+
+func FrontendFullAsset(assetPath string) string {
+	flag.Parse()
+	return *config.BaseUrl + "/assets/frontend/" + assetPath + "?v=" + config.AssetVersion
+}
+
+func SupportEmailAddress() string {
+	flag.Parse()
+	return *config.SupportEmailAddress
 }

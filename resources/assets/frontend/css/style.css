@@ -1,0 +1,174 @@
+@font-face{
+    font-family: "Haas Grot Text R Web";
+    src:url(../fonts/neue-haas-grotesk/400-normal/NeueHaasGrotTextRound-55Roman-Web.eot);
+    src:url(../fonts/neue-haas-grotesk/400-normal/NeueHaasGrotTextRound-55Roman-Web.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/neue-haas-grotesk/400-normal/NeueHaasGrotTextRound-55Roman-Web.woff2) format("woff2"),
+    url(../fonts/neue-haas-grotesk/400-normal/NeueHaasGrotTextRound-55Roman-Web.woff) format("woff");
+    font-weight: 400;
+    font-style: normal
+}
+@font-face{
+    font-family: "Haas Grot Text R Web";
+    src:url(../fonts/neue-haas-grotesk/400-italic/NeueHaasGrotTextRound-56Italic-Web.eot);
+    src:url(../fonts/neue-haas-grotesk/400-italic/NeueHaasGrotTextRound-56Italic-Web.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/neue-haas-grotesk/400-italic/NeueHaasGrotTextRound-56Italic-Web.woff2) format("woff2"),
+    url(../fonts/neue-haas-grotesk/400-italic/NeueHaasGrotTextRound-56Italic-Web.woff) format("woff");
+    font-weight: 400;
+    font-style: italic
+}
+@font-face{
+    font-family: "Haas Grot Text R Web";
+    src:url(../fonts/neue-haas-grotesk/500-normal/NeueHaasGrotTextRound-65Medium-Web.eot);
+    src:url(../fonts/neue-haas-grotesk/500-normal/NeueHaasGrotTextRound-65Medium-Web.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/neue-haas-grotesk/500-normal/NeueHaasGrotTextRound-65Medium-Web.woff2) format("woff2"),
+    url(../fonts/neue-haas-grotesk/500-normal/NeueHaasGrotTextRound-65Medium-Web.woff) format("woff");
+    font-weight: 500;
+    font-style: normal
+}
+@font-face{
+    font-family:"Haas Grot Text R Web";
+    src:url(../fonts/neue-haas-grotesk/500-italic/NeueHaasGrotTextRound-66MediumItalic-Web.eot);
+    src:url(../fonts/neue-haas-grotesk/500-italic/NeueHaasGrotTextRound-66MediumItalic-Web.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/neue-haas-grotesk/500-italic/NeueHaasGrotTextRound-66MediumItalic-Web.woff2) format("woff2"),
+    url(../fonts/neue-haas-grotesk/500-italic/NeueHaasGrotTextRound-66MediumItalic-Web.woff) format("woff");
+    font-weight: 500;
+    font-style: italic
+}
+@font-face{
+    font-family: "Haas Grot Text R Web";
+    src:url(../fonts/neue-haas-grotesk/700-normal/NeueHaasGrotTextRound-75Bold-Web.eot);
+    src:url(../fonts/neue-haas-grotesk/700-normal/NeueHaasGrotTextRound-75Bold-Web.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/neue-haas-grotesk/700-normal/NeueHaasGrotTextRound-75Bold-Web.woff2) format("woff2"),
+    url(../fonts/neue-haas-grotesk/700-normal/NeueHaasGrotTextRound-75Bold-Web.woff) format("woff");
+    font-weight: 700;
+    font-style: normal
+}
+@font-face{
+    font-family:"Haas Grot Text R Web";
+    src:url(../fonts/neue-haas-grotesk/700-italic/NeueHaasGrotTextRound-76BoldItalic-Web.eot);
+    src:url(../fonts/neue-haas-grotesk/700-italic/NeueHaasGrotTextRound-76BoldItalic-Web.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/neue-haas-grotesk/700-italic/NeueHaasGrotTextRound-76BoldItalic-Web.woff2) format("woff2"),
+    url(../fonts/neue-haas-grotesk/700-italic/NeueHaasGrotTextRound-76BoldItalic-Web.woff) format("woff");
+    font-weight: 700;
+    font-style: italic
+}
+html {
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #444;
+    background: #fff;
+    padding: 0;
+    margin: 0;
+}
+.header {
+    width: 100%;
+    height: 56px;
+    float: left;
+    padding: 0 20px;
+    background-color: #333;
+}
+.header-inner {
+    width: 100%;
+    height: 34px;
+    float: left;
+    margin-top: 11px;
+}
+.main-nav {
+    width: 100%;
+    float: left;
+}
+
+.header .nav-logo {
+    height: 34px;
+    float: left;
+    padding: 0 20px 0 0;
+}
+.nav-logo a {
+    height: 34px;
+    display: block;
+}
+.nav-logo a:hover {
+    opacity: 0.8;
+}
+.nav-logo a img{
+    width: 97px;
+    margin-top: 8px;
+}
+.main-nav .nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.main-nav .nav-list li {
+    float: left;
+    font-size: 14px;
+}
+.main-nav .nav-list li.top-login {
+    float: right;
+}
+.main-nav .nav-list li.top-register {
+    float: right;
+}
+.main-nav .nav-list li a {
+    height: 34px;
+    padding: 0 10px;
+    display: block;
+    color: #888;
+    text-decoration: none;
+    font-weight: 500;
+    line-height: 34px;
+}
+.main-nav .nav-list li a:hover {
+    color: #eee;
+}
+.main-nav .nav-list li.top-register a {
+    padding-right: 0;
+}
+.main-nav .nav-list li.top-register a span {
+    padding: 9px 18px;
+    border-radius: 2px;
+    color: #fff;
+    background-color: #ed4486;
+}
+.main-nav .nav-list li.top-register a:hover span,
+.main-nav .nav-list li.top-register a:focus span{
+    text-decoration: none;
+    background-color: #df3877;
+}
+
+.content-wrapper {
+    width: 100%;
+    float: left;
+    padding: 0 20px;
+}
+.content-inner {
+    width: 100%;
+    float: left;
+    margin-top: 10px;
+}
+@media screen and (max-width: 480px) {
+    .header {
+        padding: 0 15px;
+    }
+    .content-wrapper {
+        padding: 0 15px;
+    }
+}
+@media screen and (max-width: 320px) {
+    .main-nav .nav-list li.top-register {
+        display: none;
+    }
+    .main-nav .nav-list li.top-login a {
+        padding: 0;
+    }
+    .main-nav .nav-list li.top-login a span {
+        padding: 9px 18px;
+        border-radius: 2px;
+        color: #fff;
+        background-color: #ed4486;
+    }
+}

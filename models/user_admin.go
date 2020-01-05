@@ -7,7 +7,7 @@ import (
 )
 
 type UserAdmin struct {
-	ID        primitive.ObjectID     `bson:"id"`
+	Id        primitive.ObjectID     `bson:"id"`
 	Email     string                 `bson:"email"`
 	Password  string                 `bson:"password"`
 	Status    config.UserAdminStatus `bson:"status"`

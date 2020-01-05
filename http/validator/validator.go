@@ -2,9 +2,9 @@ package validator
 
 import (
 	"fmt"
+	"github.com/go-playground/validator/v10"
 	"github.com/vuongabc92/octocv/helpers"
 	"github.com/vuongabc92/octocv/http/session"
-	"gopkg.in/go-playground/validator.v9"
 	"regexp"
 )
 
@@ -40,7 +40,7 @@ func (v *Validator) Validate(req interface{}, msgBag map[string]string) *session
 	return msg
 }
 
-// Validate that field value must contain alpha and space only
+// Validate that field value only contains alpha and space only
 func (v *Validator) alphaSpace(fl validator.FieldLevel) bool {
 	pattern := `^[a-zA-Z\s]+$`
 	return regexp.MustCompile(pattern).MatchString(fl.Field().String())

@@ -14,3 +14,16 @@ type LoginRequest struct {
 type ForgotPasswordRequest struct {
 	Email string `form:"email"`
 }
+
+type VerifyEmailRequest struct {
+	Token string `form:"token"`
+}
+
+type ResetPasswordRequest struct {
+	Token string `form:"token"`
+}
+
+type UpdatePasswordRequest struct {
+	Token    string `form:"token" validate:"required"`
+	Password string `form:"password" validate:"required,min=6,max=64"`
+}

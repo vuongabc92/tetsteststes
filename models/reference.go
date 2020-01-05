@@ -6,8 +6,8 @@ import (
 )
 
 type Reference struct {
-	ID          primitive.ObjectID `bson:"_id,omitempty"`
-	UserID      primitive.ObjectID `bson:"user_id"`
+	Id          primitive.ObjectID `bson:"_id,omitempty"`
+	UserId      primitive.ObjectID `bson:"user_id"`
 	FullName    string             `bson:"full_name"`
 	Company     string             `bson:"company"`
 	Position    string             `bson:"position"`

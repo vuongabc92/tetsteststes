@@ -1,6 +1,7 @@
 package httputils
 
 import (
+	"fmt"
 	"github.com/vuongabc92/octocv"
 	"github.com/vuongabc92/octocv/config"
 	"github.com/vuongabc92/octocv/errdefs"
@@ -15,8 +16,10 @@ var htmlRender = render.NewMultipleHTML()
 var templateEngine = template.NewTemplateEngine()
 
 func init() {
-	htmlRender.AddFromFilesFuncs("error.404", gotpl.FuncMap{}, viewPath("error/404.html"))
-	htmlRender.AddFromFilesFuncs("error.5xx", gotpl.FuncMap{}, viewPath("error/5xx.html"))
+	tplFuncs := gotpl.FuncMap{
+		"asset_url": template.FrontendAsset,
+	}
+	htmlRender.AddFromFilesFuncs("errors.error", tplFuncs, viewPath("error/404.html"))
 
 	templateEngine.HTMLRender = htmlRender
 }
@@ -25,11 +28,16 @@ func init() {
 // Any function that has the appropriate signature can be registered as an server endpoint (e.g. getVersion).
 type HandlerFunc func(ctx *octocv.Context, vars map[string]string) error
 
+type ErrorResponse struct {
+	ErrorCode    int    `json:"error_code"`
+	ErrorTitle   string `json:"error_title"`
+	ErrorContent string `json:"error_content"`
+}
+
 // MakeErrorHandler makes an HTTP handler that decodes error and
 // returns it in the response.
 func MakeErrorHandler(err error) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-
 		// Error logger
 		logFiles := make(map[string]string)
 		logFiles[log.ErrorLog] = *config.ErrorLogFile
@@ -38,10 +46,20 @@ func MakeErrorHandler(err error) http.HandlerFunc {
 		statusCode := errdefs.GetHTTPErrorStatusCode(err)
 		logger.Errorf("Error status code: %d, error message: %s", statusCode, err.Error())
 
-		instance := templateEngine.HTMLRender.Instance("error.5xx", nil)
-		if statusCode == http.StatusNotFound {
-			instance = templateEngine.HTMLRender.Instance("error.404", nil)
+		errResp := ErrorResponse{
+			ErrorCode:    statusCode,
+			ErrorTitle:   "Shit happens",
+			ErrorContent: err.Error(),
 		}
+		if statusCode == http.StatusNotFound {
+			errResp = ErrorResponse{
+				ErrorCode:    http.StatusNotFound,
+				ErrorTitle:   "Page not found",
+				ErrorContent: fmt.Sprintf("The requested URL %s was not found on this server", r.RequestURI),
+			}
+		}
+
+		instance := templateEngine.HTMLRender.Instance("errors.error", errResp)
 
 		w.WriteHeader(statusCode)
 		if err := instance.Render(w); err != nil {

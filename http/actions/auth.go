@@ -1,9 +1,11 @@
 package actions
 
 import (
-	"crypto/sha1"
 	"encoding/json"
+	"errors"
+	"flag"
 	"fmt"
+	"github.com/dgrijalva/jwt-go"
 	"github.com/vuongabc92/octocv"
 	"github.com/vuongabc92/octocv/config"
 	"github.com/vuongabc92/octocv/helpers"
@@ -13,7 +15,21 @@ import (
 	"github.com/vuongabc92/octocv/models"
 	"github.com/vuongabc92/octocv/worker"
 	"golang.org/x/crypto/bcrypt"
+	"net/http"
 )
+
+const VerifyEmailJWTIssuer string = "VerifyEmail"
+const ResetPasswordJWTIssuer string = "ResetPassword"
+
+type VerifyEmailJWTClaims struct {
+	Email string `json:"email"`
+	jwt.StandardClaims
+}
+
+type ResetPasswordJWTClaims struct {
+	Email string `json:"email"`
+	jwt.StandardClaims
+}
 
 type Auth struct {
 }
@@ -29,8 +45,9 @@ func (a Auth) Register(ctx *octocv.Context, req auth.RegisterRequest) error {
 		err         error
 		user        models.User
 		hash        []byte
-		verifyToken []byte
 	)
+
+	flag.Parse()
 
 	// Is email used?
 	if user, err = userRepo.FindByEmail(ctx.Context, req.Email); err == nil {
@@ -54,17 +71,29 @@ func (a Auth) Register(ctx *octocv.Context, req auth.RegisterRequest) error {
 		return err
 	}
 
-	// Generate verify token, the token will be changed only and only the param change.
-	// Token will be expired after an hour (base on updated_at).
-	sha1 := sha1.New()
-	sha1.Write([]byte(req.Email + helpers.Now().String()))
-	verifyToken = sha1.Sum(nil)
+	// JWT token
+	verifyEmailJWTClaims := VerifyEmailJWTClaims{
+		req.Email,
+		jwt.StandardClaims{
+			ExpiresAt: helpers.Now().Add(config.ExpiredAt).Unix(),
+			Issuer:    VerifyEmailJWTIssuer,
+		},
+	}
+
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, verifyEmailJWTClaims)
+
+	// Sign and get the complete encoded token as a string using the secret
+	var tokenString string
+	if tokenString, err = token.SignedString([]byte(*config.JWTSecretKey)); err != nil {
+		ctx.Logger.Error(err)
+		return err
+	}
 
 	user = models.User{
-		Email:    req.Email,
-		Password: string(hash),
-		Status:   config.UserStatusNew,
-		VerifyToken: fmt.Sprintf("%x", verifyToken),
+		Email:       req.Email,
+		Password:    string(hash),
+		Status:      config.UserStatusNew,
+		VerifyToken: tokenString,
 	}
 
 	if err = userRepo.Insert(ctx.Context, &user); err != nil {
@@ -74,7 +103,7 @@ func (a Auth) Register(ctx *octocv.Context, req auth.RegisterRequest) error {
 
 	mailData := mail.RegisterConfirmationMail{
 		MailTo:    req.Email,
-		VerifyURL: ctx.Url("get_email_verify", "email", req.Email, "signature", fmt.Sprintf("%x", verifyToken)),
+		VerifyURL: ctx.FullUrl("get_verify_email", "token", user.VerifyToken),
 	}
 
 	var msg []byte
@@ -89,6 +118,9 @@ func (a Auth) Register(ctx *octocv.Context, req auth.RegisterRequest) error {
 		ctx.Logger.Error(err)
 		return err
 	}
+
+	// Todo: Redirect to welcomepage
+	ctx.Redirect(ctx.Url("get_home"))
 
 	return nil
 }
@@ -114,7 +146,7 @@ func (a Auth) Login(ctx *octocv.Context, req auth.LoginRequest) error {
 		return nil
 	}
 
-	// Encrypt password
+	// Compare password user input and the one in DB
 	if err = bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(req.Password)); err != nil {
 		msgBag := session.NewMessageBag()
 		msgBag.Add("email.fails", helpers.Trans("login_fails"))
@@ -123,7 +155,8 @@ func (a Auth) Login(ctx *octocv.Context, req auth.LoginRequest) error {
 		return nil
 	}
 
-	// TODO: redirect user.
+	// TODO: create session or cookie and redirect user.
+	ctx.Redirect(ctx.Url("get_home"))
 
 	return nil
 }
@@ -139,9 +172,7 @@ func (a Auth) ForgotPassword(ctx *octocv.Context, req auth.ForgotPasswordRequest
 		userRepo      = repoFactory.User()
 		resetPassRepo = repoFactory.ResetPassword()
 		msgBag        = session.NewMessageBag()
-
 		err           error
-		token         []byte
 		resetPassword models.ResetPassword
 	)
 
@@ -152,9 +183,20 @@ func (a Auth) ForgotPassword(ctx *octocv.Context, req auth.ForgotPasswordRequest
 		return err
 	}
 
-	// Generate reset password token
-	token, err = bcrypt.GenerateFromPassword([]byte(req.Email+helpers.Now().String()), bcrypt.MinCost)
-	if err != nil {
+	// JWT token
+	resetPasswordJWTClaims := ResetPasswordJWTClaims{
+		req.Email,
+		jwt.StandardClaims{
+			ExpiresAt: helpers.Now().Add(config.ExpiredAt).Unix(),
+			Issuer:    ResetPasswordJWTIssuer,
+		},
+	}
+
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, resetPasswordJWTClaims)
+
+	// Sign and get the complete encoded token as a string using the secret
+	var tokenString string
+	if tokenString, err = token.SignedString([]byte(*config.JWTSecretKey)); err != nil {
 		ctx.Logger.Error(err)
 		return err
 	}
@@ -168,7 +210,8 @@ func (a Auth) ForgotPassword(ctx *octocv.Context, req auth.ForgotPasswordRequest
 		// Insert new reset password
 		resetPassword = models.ResetPassword{
 			Email: req.Email,
-			Token: fmt.Sprintf("%s", token),
+			Token: tokenString,
+			Status: config.ResetPasswordStatusNew,
 		}
 
 		if err = resetPassRepo.Insert(ctx.Context, &resetPassword); err != nil {
@@ -177,8 +220,9 @@ func (a Auth) ForgotPassword(ctx *octocv.Context, req auth.ForgotPasswordRequest
 		}
 	} else {
 		// Update user reset password token
-		resetPassword.Token = fmt.Sprintf("%s", token)
-		if err = resetPassRepo.Update(ctx.Context, resetPassword.ID, &resetPassword); err != nil {
+		resetPassword.Token = tokenString
+		resetPassword.Status = config.ResetPasswordStatusNew
+		if err = resetPassRepo.Update(ctx.Context, &resetPassword); err != nil {
 			ctx.Logger.Error(err)
 			return err
 		}
@@ -186,7 +230,7 @@ func (a Auth) ForgotPassword(ctx *octocv.Context, req auth.ForgotPasswordRequest
 
 	mailData := mail.ForgotPasswordMail{
 		MailTo:    req.Email,
-		VerifyURL: "http://octocv.co/password/reset/e0791177f94a0dbe6d04a45e4153507b2c559ca6d12880c2e4064070e3d52bad/master@yopmail.com",
+		VerifyURL: ctx.FullUrl("get_reset_password", "token", tokenString),
 	}
 
 	var msg []byte
@@ -204,4 +248,167 @@ func (a Auth) ForgotPassword(ctx *octocv.Context, req auth.ForgotPasswordRequest
 	ctx.Redirect(ctx.Url("get_forgot_password"))
 
 	return nil
+}
+
+// Verify user register email.
+// This method implements auth backend.
+// When user register there is a confirmation email is sent to the registered email,
+// the email contains a token that will be expired for x minutes.
+// If the verify fails, user will be redirected to an error page that show why it fails or redirected to
+// welcome page if valid.
+func (a Auth) VerifyEmail(ctx *octocv.Context, req auth.VerifyEmailRequest) error {
+	var (
+		repoFactory = ctx.GetRepositoryFactory()
+		userRepo    = repoFactory.User()
+		err         error
+		user        models.User
+	)
+
+	flag.Parse()
+
+	// Parse takes the token string and a function for looking up the key. The latter is especially
+	// useful if you use multiple keys for your application.  The standard is to use 'kid' in the
+	// head of the token to identify which key to use, but the parsed token (head and claims) is provided
+	// to the callback, providing flexibility.
+	token, err := jwt.Parse(req.Token, func(token *jwt.Token) (interface{}, error) {
+		// Don't forget to validate the alg is what you expect:
+		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
+			err = fmt.Errorf("unexpected signing method: %v", token.Header["alg"])
+			return nil, err
+		}
+
+		// hmacSampleSecret is a []byte containing your secret, e.g. []byte("my_secret_key")
+		return []byte(*config.JWTSecretKey), nil
+	})
+
+	if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
+		if user, err = userRepo.FindByVerifyToken(ctx.Context, token.Raw); err == nil {
+			if user.Email == claims["email"] {
+				// Update user status to verified
+				user.Status = config.UserStatusConfirmed
+				if err = userRepo.Update(ctx.Context, &user); err != nil {
+					ctx.Logger.Error(err)
+					return err
+				}
+
+				// TODO: Create welcome page
+				ctx.Redirect("Welcome page")
+			}
+		}
+	}
+
+	err = errors.New("resent password token is invalid or expired, please try again")
+	ctx.Logger.Error(err)
+	return err
+}
+
+// Verify reset password email.
+// This method implements auth backend.
+// Verify reset password token, if the token is valid then display reset password form.
+func (a Auth) ResetPassword(ctx *octocv.Context, req auth.ResetPasswordRequest) error {
+	var (
+		repoFactory       = ctx.GetRepositoryFactory()
+		resetPasswordRepo = repoFactory.ResetPassword()
+		err               error
+		resetPassword     models.ResetPassword
+	)
+
+	flag.Parse()
+
+	// Parse takes the token string and a function for looking up the key. The latter is especially
+	// useful if you use multiple keys for your application.  The standard is to use 'kid' in the
+	// head of the token to identify which key to use, but the parsed token (head and claims) is provided
+	// to the callback, providing flexibility.
+	token, err := jwt.Parse(req.Token, func(token *jwt.Token) (interface{}, error) {
+		// Don't forget to validate the alg is what you expect:
+		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
+			err = fmt.Errorf("unexpected signing method: %v", token.Header["alg"])
+			return nil, err
+		}
+
+		// hmacSampleSecret is a []byte containing your secret, e.g. []byte("my_secret_key")
+		return []byte(*config.JWTSecretKey), nil
+	})
+
+	if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
+		if resetPassword, err = resetPasswordRepo.FindByToken(ctx.Context, token.Raw); err == nil {
+			if resetPassword.Email == claims["email"] && resetPassword.Status == config.ResetPasswordStatusNew {
+				resp := auth.ResetPasswordResponse{Token: token.Raw}
+				ctx.HTML(http.StatusOK, "auth.reset-password", resp)
+				return nil
+			}
+		}
+	}
+
+	err = errors.New("verify token is invalid or expired, please try again")
+	ctx.Logger.Error(err)
+	return err
+}
+
+// Update user password.
+// This method implements auth backend.
+// Update user's password when they click on forgot password link and get a reset password instruction.
+func (a Auth) UpdatePassword(ctx *octocv.Context, req auth.UpdatePasswordRequest) error {
+	var (
+		repoFactory       = ctx.GetRepositoryFactory()
+		resetPasswordRepo = repoFactory.ResetPassword()
+		err               error
+		resetPassword     models.ResetPassword
+	)
+
+	flag.Parse()
+
+	// Parse takes the token string and a function for looking up the key. The latter is especially
+	// useful if you use multiple keys for your application.  The standard is to use 'kid' in the
+	// head of the token to identify which key to use, but the parsed token (head and claims) is provided
+	// to the callback, providing flexibility.
+	token, err := jwt.Parse(req.Token, func(token *jwt.Token) (interface{}, error) {
+		// Don't forget to validate the alg is what you expect:
+		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
+			err = fmt.Errorf("unexpected signing method: %v", token.Header["alg"])
+			return nil, err
+		}
+
+		// hmacSampleSecret is a []byte containing your secret, e.g. []byte("my_secret_key")
+		return []byte(*config.JWTSecretKey), nil
+	})
+
+	if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
+		if resetPassword, err = resetPasswordRepo.FindByToken(ctx.Context, token.Raw); err == nil {
+			if resetPassword.Email == claims["email"] {
+				var (
+					userRepo = repoFactory.User()
+					user     models.User
+					hash     []byte
+				)
+
+				if user, err = userRepo.FindByEmail(ctx.Context, resetPassword.Email); err != nil {
+					return err
+				}
+
+				// Encrypt password
+				if hash, err = bcrypt.GenerateFromPassword([]byte(req.Password), bcrypt.DefaultCost); err != nil {
+					ctx.Logger.Error(err)
+					return err
+				}
+
+				user.Password = string(hash)
+				if err = userRepo.Update(ctx.Context, &user); err != nil {
+					return err
+				}
+
+				resetPassword.Status = config.ResetPasswordStatusDone
+				if err = resetPasswordRepo.Update(ctx.Context, &resetPassword); err != nil {
+					return err
+				}
+
+				ctx.Redirect(ctx.Url("get_home"))
+				return nil
+			}
+		}
+	}
+
+	err = errors.New("verify token is invalid or expired, please try again")
+	ctx.Logger.Error(err)
+	return err
 }

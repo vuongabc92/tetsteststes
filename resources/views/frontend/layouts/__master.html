@@ -1,42 +1,39 @@
-{{ define "root"}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Octocv - We help people find their dream job</title>
-    <link rel="stylesheet" href="/assets/frontend/css/master.css">
-    <link rel="stylesheet" href="/assets/frontend/css/layout.css">
+    <title>{{ template "title" }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ "css/reset.css" | asset_url }}">
+    <link rel="stylesheet" href="{{ "css/style.css" | asset_url }}">
+    {{ template "style" }}
+    {{ template "inline_style" }}
 </head>
 <body>
-<main class="__layout-master">
-    <header class="_fwfl header">
-        <div class="_fwfl header-inside">
-            <nav class="navbar navbar-expand-lg navbar-main">
-                <a class="navbar-brand" href="#">OCTOCV</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav _fr">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">About us <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Hire us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Register</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </header>
-</main>
-{{ template "content" }}
+<header class="header">
+    <div class="header-inner">
+        <nav class="main-nav">
+            <div class="nav-logo">
+                <a href="/">
+                    <img src="{{ "images/logo-white.png" | asset_url }}" />
+                </a>
+            </div>
+            <ul class="nav-list">
+                <li class="top-register"><a href="{{ "get_register" | url }}"><span>Register</span></a></li>
+                <li class="top-login"><a href="{{ "get_login" | url }}"><span>Login</span></a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="content-wrapper">
+    <div class="content-inner">
+        {{ template "content" }}
+    </div>
+</div>
+<script src="{{ "js/jquery-3.4.1.js" | asset_url }}"></script>
+<script src="{{ "js/bootstrap.min.js" | asset_url }}"></script>
+
+{{ template "javascript" }}
+{{ template "inline_script"}}
 </body>
 </html>
-{{ end }}

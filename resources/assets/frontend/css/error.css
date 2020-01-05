@@ -1,0 +1,113 @@
+@font-face{
+    font-family: "Haas Grot Text R Web";
+    src:url(../fonts/neue-haas-grotesk/400-normal/NeueHaasGrotTextRound-55Roman-Web.eot);
+    src:url(../fonts/neue-haas-grotesk/400-normal/NeueHaasGrotTextRound-55Roman-Web.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/neue-haas-grotesk/400-normal/NeueHaasGrotTextRound-55Roman-Web.woff2) format("woff2"),
+    url(../fonts/neue-haas-grotesk/400-normal/NeueHaasGrotTextRound-55Roman-Web.woff) format("woff");
+    font-weight: 400;
+    font-style: normal
+}
+@font-face{
+    font-family: "Haas Grot Text R Web";
+    src:url(../fonts/neue-haas-grotesk/400-italic/NeueHaasGrotTextRound-56Italic-Web.eot);
+    src:url(../fonts/neue-haas-grotesk/400-italic/NeueHaasGrotTextRound-56Italic-Web.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/neue-haas-grotesk/400-italic/NeueHaasGrotTextRound-56Italic-Web.woff2) format("woff2"),
+    url(../fonts/neue-haas-grotesk/400-italic/NeueHaasGrotTextRound-56Italic-Web.woff) format("woff");
+    font-weight: 400;
+    font-style: italic
+}
+@font-face{
+    font-family: "Haas Grot Text R Web";
+    src:url(../fonts/neue-haas-grotesk/500-normal/NeueHaasGrotTextRound-65Medium-Web.eot);
+    src:url(../fonts/neue-haas-grotesk/500-normal/NeueHaasGrotTextRound-65Medium-Web.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/neue-haas-grotesk/500-normal/NeueHaasGrotTextRound-65Medium-Web.woff2) format("woff2"),
+    url(../fonts/neue-haas-grotesk/500-normal/NeueHaasGrotTextRound-65Medium-Web.woff) format("woff");
+    font-weight: 500;
+    font-style: normal
+}
+@font-face{
+    font-family:"Haas Grot Text R Web";
+    src:url(../fonts/neue-haas-grotesk/500-italic/NeueHaasGrotTextRound-66MediumItalic-Web.eot);
+    src:url(../fonts/neue-haas-grotesk/500-italic/NeueHaasGrotTextRound-66MediumItalic-Web.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/neue-haas-grotesk/500-italic/NeueHaasGrotTextRound-66MediumItalic-Web.woff2) format("woff2"),
+    url(../fonts/neue-haas-grotesk/500-italic/NeueHaasGrotTextRound-66MediumItalic-Web.woff) format("woff");
+    font-weight: 500;
+    font-style: italic
+}
+@font-face{
+    font-family: "Haas Grot Text R Web";
+    src:url(../fonts/neue-haas-grotesk/700-normal/NeueHaasGrotTextRound-75Bold-Web.eot);
+    src:url(../fonts/neue-haas-grotesk/700-normal/NeueHaasGrotTextRound-75Bold-Web.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/neue-haas-grotesk/700-normal/NeueHaasGrotTextRound-75Bold-Web.woff2) format("woff2"),
+    url(../fonts/neue-haas-grotesk/700-normal/NeueHaasGrotTextRound-75Bold-Web.woff) format("woff");
+    font-weight: 700;
+    font-style: normal
+}
+@font-face{
+    font-family:"Haas Grot Text R Web";
+    src:url(../fonts/neue-haas-grotesk/700-italic/NeueHaasGrotTextRound-76BoldItalic-Web.eot);
+    src:url(../fonts/neue-haas-grotesk/700-italic/NeueHaasGrotTextRound-76BoldItalic-Web.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/neue-haas-grotesk/700-italic/NeueHaasGrotTextRound-76BoldItalic-Web.woff2) format("woff2"),
+    url(../fonts/neue-haas-grotesk/700-italic/NeueHaasGrotTextRound-76BoldItalic-Web.woff) format("woff");
+    font-weight: 700;
+    font-style: italic
+}
+body {
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    color: #444;
+    background: #fff;
+    padding: 0;
+    margin: 0;
+}
+.error-wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.error-inner {
+    width: 100%;
+    float: left;
+    padding: 100px 110px 0 0;
+}
+.error-inner div.error-logo,
+.error-inner div.error-content {
+    width: 100%;
+    float: left;
+}
+div.error-logo a span {
+    display: inline-block;
+    width: 107px;
+    height: 20px;
+    background-size: cover;
+    background-position: center;
+}
+div.error-content {
+    margin-top: 27px;
+}
+div.error-content p {
+    margin: 10px 0 17px;
+    overflow: hidden;
+    line-height: 20px;
+}
+div.error-content p.err-txt:first-letter {
+    text-transform: uppercase;
+}
+div.error-content p strong {
+    font-weight: bold;
+}
+div.error-content p span {
+    color: #666;
+}
+div.error-content p a {
+    text-decoration: underline;
+}
+div.error-content p ins {
+    color: #777;
+    text-decoration: none;
+}
+@media screen and (max-width: 768px) {
+    .error-inner {
+        padding: 70px 0 0 0;
+    }
+}

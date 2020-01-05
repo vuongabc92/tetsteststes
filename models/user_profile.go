@@ -7,8 +7,8 @@ import (
 )
 
 type UserProfile struct {
-	ID          primitive.ObjectID `bson:"id"`
-	UserID      primitive.ObjectID `bson:"user_id"`
+	Id          primitive.ObjectID `bson:"id"`
+	UserId      primitive.ObjectID `bson:"user_id"`
 	JobTitle    string             `bson:"job_title"`
 	FirstName   string             `bson:"first_name"`
 	LastName    string             `bson:"last_name"`

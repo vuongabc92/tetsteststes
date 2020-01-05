@@ -15,6 +15,11 @@ func (u *UserRepository) FindByEmail(ctx context.Context, email string) (user mo
 	return
 }
 
+func (u *UserRepository) FindByVerifyToken(ctx context.Context, token string) (user models.User, err error) {
+	err = u.collection.FindOne(ctx, bson.M{"verify_token": token}).Decode(&user)
+	return
+}
+
 func (u *UserRepository) CollectionName() string {
 	return collectionPrefix + "users"
 }

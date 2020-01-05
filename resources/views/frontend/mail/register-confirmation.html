@@ -6,19 +6,19 @@
     <style type="text/css">
         @font-face{
             font-family: "Haas Grot Text R Web";
-            src:url(http://localhost:8080/assets/frontend/fonts/neue-haas-grotesk/400-normal/NeueHaasGrotTextRound-55Roman-Web.woff2);
-            src:url(http://localhost:8080/assets/frontend/fonts/neue-haas-grotesk/400-normal/NeueHaasGrotTextRound-55Roman-Web.eot?#iefix) format("embedded-opentype"),
-            url(http://localhost:8080/assets/frontend/fonts/neue-haas-grotesk/400-normal/NeueHaasGrotTextRound-55Roman-Web.woff2) format("woff2"),
-            url(http://localhost:8080/assets/frontend/fonts/neue-haas-grotesk/400-normal/NeueHaasGrotTextRound-55Roman-Web.woff) format("woff");
+            src:url("{{ "fonts/neue-haas-grotesk/400-normal/NeueHaasGrotTextRound-55Roman-Web.woff2" | frontend_full_asset }}");
+            src:url("{{ "frontend/fonts/neue-haas-grotesk/400-normal/NeueHaasGrotTextRound-55Roman-Web.eot?#iefix" | frontend_full_asset }}") format("embedded-opentype"),
+            url("{{ "fonts/neue-haas-grotesk/400-normal/NeueHaasGrotTextRound-55Roman-Web.woff2" | frontend_full_asset }}") format("woff2"),
+            url("{{ "frontend/fonts/neue-haas-grotesk/400-normal/NeueHaasGrotTextRound-55Roman-Web.woff" | frontend_full_asset }}") format("woff");
             font-weight: 400;
             font-style: normal
         }
         @font-face{
             font-family: "Haas Grot Text R Web";
-            src:url(http://localhost:8080/assets/frontend/fonts/neue-haas-grotesk/700-normal/NeueHaasGrotTextRound-75Bold-Web.eot);
-            src:url(http://localhost:8080/assets/frontend/fonts/neue-haas-grotesk/700-normal/NeueHaasGrotTextRound-75Bold-Web.eot?#iefix) format("embedded-opentype"),
-            url(http://localhost:8080/assets/frontend/fonts/neue-haas-grotesk/700-normal/NeueHaasGrotTextRound-75Bold-Web.woff2) format("woff2"),
-            url(http://localhost:8080/assets/frontend/fonts/neue-haas-grotesk/700-normal/NeueHaasGrotTextRound-75Bold-Web.woff) format("woff");
+            src:url("{{ "fonts/neue-haas-grotesk/700-normal/NeueHaasGrotTextRound-75Bold-Web.eot" | frontend_full_asset }}");
+            src:url("{{ "fonts/neue-haas-grotesk/700-normal/NeueHaasGrotTextRound-75Bold-Web.eot?#iefix" | frontend_full_asset }}") format("embedded-opentype"),
+            url("{{ "fonts/neue-haas-grotesk/700-normal/NeueHaasGrotTextRound-75Bold-Web.woff2" | frontend_full_asset }}") format("woff2"),
+            url("{{ "fonts/neue-haas-grotesk/700-normal/NeueHaasGrotTextRound-75Bold-Web.woff" | frontend_full_asset }}") format("woff");
             font-weight: 700;
             font-style: normal
         }
@@ -41,24 +41,24 @@
                                         <tbody>
                                         <tr>
                                             <td align="center" style="padding-top:15px;padding-bottom:15px;border-bottom: solid 1px #eee;">
-                                                <a href="http://octocv.co"><img src="http://octocv.co/assets/frontend/images/logo.png" width="150px" /></a>
+                                                <a href="{{ "get_home" | full_url }}"><img src="{{ "images/logo-dark.png" | frontend_full_asset }}" width="100px"/></a>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td style="padding:20px 20px 10px;">
-                                                <p>Hi, Hello and Welcome :)</p>
-                                                <p>We&#039;re very excited to have you on board! Please verify your Email.</p>
+                                                <p>{{ "mail_confirmation_hi" | trans }}</p>
+                                                <p>{{ "mail_confirmation_we_happy" | trans }}</p>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td style="padding-left:20px;padding-right:20px;" align="center">
-                                                <a href="http://octocv.co/email/verify/89?expires=1557326044&amp;signature=4e19b567468e36d7e51ce701e9c1efa41e09b0ca787fa38101ee22b1c3152af2" target="_blank" style="float:left;padding:10px 15px;background-color:#70be44;color:#fff;border-radius:3px;-webkit-border-radius:3px;text-decoration:none;">VERIFY YOUR EMAIL</a>
+                                                <a href="{{ .VerifyURL }}" target="_blank" style="float:left;padding:10px 15px;background-color:#ed4486;color:#fff;border-radius:3px;-webkit-border-radius:3px;text-decoration:none;">{{ "mail_confirmation_verify_btn" | trans }}</a>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td style="padding:20px;font-size:13px;">
                                                 <div style="width:100%;float:left;padding-top:20px;border-top:solid 1px #eee;">
-                                                    If the button above does not work, please copy this link and paste into your browser:
+                                                    {{ "mail_confirmation_btn_fails" | trans }}
                                                 </div>
                                                 <div style="width:100%;float:left;margin-top:10px;background-color:#f5f5f5;border-radius:3px;-webkit-border-radius:3px;color:#007aff;">
                                                     <span style="float:left;padding:10px;color:#007aff;word-break:break-all;">{{ .VerifyURL }}</span>
@@ -71,7 +71,7 @@
                             </tr>
                             <tr>
                                 <td align="center">
-                                    <p style="color:#666;text-align:center;">Octocv Team | <a href="mailto:support@octocv.co" style="color:#5f94ce;text-decoration:none;">support@octocv.co</a><p>
+                                    <p style="color:#666;text-align:center;">{{ "mail_confirmation_support_team" | trans }} | <a href="mailto:{{ support_email }}" style="color:#5f94ce;text-decoration:none;">{{ support_email }}</a><p>
                                 </td>
                             </tr>
                             </tbody>

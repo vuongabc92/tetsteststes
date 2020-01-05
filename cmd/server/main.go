@@ -14,6 +14,7 @@ import (
 	"github.com/vuongabc92/octocv/http/middleware"
 	"github.com/vuongabc92/octocv/http/router"
 	authrouter "github.com/vuongabc92/octocv/http/router/auth"
+	homerouter "github.com/vuongabc92/octocv/http/router/home"
 	"github.com/vuongabc92/octocv/lang"
 	"github.com/vuongabc92/octocv/render"
 	tpl "github.com/vuongabc92/octocv/template"
@@ -52,7 +53,7 @@ func main() {
 	_, err := redisClient.Ping().Result()
 	if err != nil {
 		logger.Errorf("Can not connect to redis. Error: %s", err.Error())
-		panic("Can not connecto to redis. Error: " + err.Error())
+		panic("Can not connect to to redis. Error: " + err.Error())
 	}
 
 	// New server
@@ -68,6 +69,7 @@ func main() {
 	// Init routers
 	routers := []router.Router{
 		authrouter.NewRouter(actions.Auth{}),
+		homerouter.NewRouter(actions.Auth{}),
 	}
 	s.InitRouter(routers...)
 
@@ -111,30 +113,36 @@ func loadTemplate(mux *mux.Router) render.MultipleHTML {
 	r := render.NewMultipleHTML()
 	templateFuncs := getTemplateFuncs(mux)
 
-	//Register view template
-	r.AddFromFilesFuncs("auth.login", templateFuncs, viewPath("auth/login.html"))
-	r.AddFromFilesFuncs("auth.register", templateFuncs, viewPath("auth/register.html"))
-	r.AddFromFilesFuncs("auth.forgot-password", templateFuncs, viewPath("auth/forgot-password.html"))
-	r.AddFromFilesFuncs("error.404", templateFuncs, viewPath("error/404.html"))
-	r.AddFromFilesFuncs("error.5xx", templateFuncs, viewPath("error/5xx.html"))
+	// Register view template
+	r.AddFromFilesFuncs("auth.login", templateFuncs, viewPath("layouts/__auth.html"), viewPath("auth/login.html"))
+	r.AddFromFilesFuncs("auth.register", templateFuncs, viewPath("layouts/__auth.html"), viewPath("auth/register.html"))
+	r.AddFromFilesFuncs("auth.forgot-password", templateFuncs, viewPath("layouts/__auth.html"), viewPath("auth/forgot-password.html"))
+	r.AddFromFilesFuncs("auth.reset-password", templateFuncs, viewPath("layouts/__auth.html"), viewPath("auth/reset-password.html"))
 	r.AddFromFilesFuncs("mail.register-confirmation", templateFuncs, viewPath("mail/register-confirmation.html"))
 	r.AddFromFilesFuncs("mail.forgot-password", templateFuncs, viewPath("mail/forgot-password.html"))
+	r.AddFromFilesFuncs("page.home", templateFuncs, viewPath("layouts/__master.html"), viewPath("pages/home.html"))
 
 	return r
 }
 
 func getTemplateFuncs(r *mux.Router) template.FuncMap {
 	return template.FuncMap{
-		"url": func(name string, queryPairs...string) string {
+		"url": func(name string, queryPairs ...string) string {
 			url, _ := r.Get(name).URL(queryPairs...)
-
 			return url.EscapedPath()
 		},
-		"form_msg":       tpl.MessageBagGet,
-		"form_has_msg":   tpl.MessageBagHas,
-		"form_text":      tpl.FormDataText,
-		"trans":          tpl.Trans,
-		"frontend_asset": tpl.FrontendAsset,
+		"full_url": func(name string, queryPairs ...string) string {
+			url, _ := r.Get(name).URL(queryPairs...)
+			flag.Parse()
+			return *config.BaseUrl + url.EscapedPath()
+		},
+		"form_msg":            tpl.MessageBagGet,
+		"form_has_msg":        tpl.MessageBagHas,
+		"form_text":           tpl.FormDataText,
+		"trans":               tpl.Trans,
+		"asset_url":           tpl.FrontendAsset,
+		"frontend_full_asset": tpl.FrontendFullAsset,
+		"support_email":       tpl.SupportEmailAddress,
 	}
 }
 
@@ -143,11 +151,8 @@ func viewPath(name string) string {
 }
 
 func initMiddlewares(s *http.Server) error {
-	reqIDMiddleware := middleware.NewRequestIDMiddleware()
-	s.UseMiddleware(reqIDMiddleware)
-
-	langMiddleware := middleware.NewLangMiddleware()
-	s.UseMiddleware(langMiddleware)
+	s.UseMiddleware(middleware.NewRequestIDMiddleware())
+	s.UseMiddleware(middleware.NewLangMiddleware())
 
 	return nil
 }
